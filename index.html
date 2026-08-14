@@ -164,30 +164,68 @@ a{color:inherit}
 }
 
 /* ══ FULL-WIDTH PHOTO BAND ═══════════════════════════════
-   Fixed aspect ratios, not fixed heights, so the crop is
-   predictable at every width. Wide screens cut from the
-   bottom; phones cut from the right. Either way her shoes
-   stay out of frame.
+   Fixed aspect ratio, not fixed height, so the crop stays
+   predictable at every width. Wide screens crop top and
+   bottom; phones crop the sides.
    ═══════════════════════════════════════════════════════ */
 .band{
   position:relative;width:100%;
-  aspect-ratio:2.4/1;max-height:34rem;
+  aspect-ratio:2/1;max-height:46rem;
   overflow:hidden;margin-block:clamp(1rem,4vh,3rem);background:var(--paper);
 }
 .band-photo{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center top;
+  object-fit:cover;object-position:center 30%;
 }
 .band::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    linear-gradient(to bottom, var(--paper) 0%, transparent 15%),
-    linear-gradient(to top,    var(--paper) 0%, transparent 17%);
+    linear-gradient(to bottom, var(--paper) 0%, transparent 14%),
+    linear-gradient(to top,    var(--paper) 0%, transparent 16%);
 }
 @media(max-width:44rem){
   .band{aspect-ratio:1/1;max-height:none}
-  .band-photo{object-position:34% 38%}
+  .band-photo{object-position:46% 45%}
 }
+
+/* ══ THE DAY ═════════════════════════════════════════════ */
+.day{list-style:none;margin:2.75rem 0 0;padding:0;max-width:47rem}
+.day li{
+  display:grid;grid-template-columns:1.6rem 5.6rem 1fr;gap:clamp(.85rem,3vw,1.6rem);
+  align-items:baseline;padding:1.2rem 0;border-top:1px solid var(--rule);
+}
+.day li:last-child{border-bottom:1px solid var(--rule)}
+.day svg{width:1.6rem;height:1.6rem;align-self:center;overflow:visible;flex:none}
+.at{
+  font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--ink-soft);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.what{font-family:var(--display);font-size:1.42rem;line-height:1.16}
+.what small{
+  display:block;font-family:var(--body);font-size:.87rem;color:var(--ink-soft);
+  margin-top:.35rem;line-height:1.55;
+}
+@media(max-width:34rem){
+  .day li{grid-template-columns:1.3rem 1fr;row-gap:.35rem}
+  .day li .at{grid-column:2}
+  .day li .what{grid-column:2}
+  .day svg{width:1.3rem;height:1.3rem;grid-row:1/3}
+}
+
+/* ══ CARDS — each one a different colour, like the glasses ══ */
+.cards{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:2.75rem}
+@media(min-width:44rem){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:66rem){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{
+  padding:1.7rem 1.5rem 1.6rem;background:var(--paper-warm);
+  border-radius:2px;border-top:3px solid var(--c);position:relative;
+}
+.card .tag{
+  font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--c);display:block;margin-bottom:.75rem;filter:brightness(.78);
+}
+.card h3{font-size:1.28rem;margin-bottom:.55rem}
+.card p{font-size:.91rem;color:var(--ink-soft);margin:0}
 
 /* ══ FAQ ═════════════════════════════════════════════════ */
 .faq{max-width:45rem;margin-top:2.75rem;border-top:1px solid var(--rule)}

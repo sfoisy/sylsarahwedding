@@ -208,6 +208,11 @@ input[type=text],input[type=email],textarea{
 input::placeholder,textarea::placeholder{color:var(--ink-soft);opacity:.55}
 input:focus,textarea:focus{outline:none;border-color:var(--marigold);background:rgba(255,255,255,.11)}
 textarea{resize:vertical;min-height:5.5rem}
+.code-input{
+  font-family:var(--display);font-size:1.9rem;letter-spacing:.22em;
+  text-align:center;text-transform:uppercase;padding:.85rem .5rem;
+}
+.code-input::placeholder{letter-spacing:.22em;font-size:1.6rem;opacity:.35}
 .field{margin-bottom:1.25rem}
 
 .btn{
@@ -369,7 +374,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   <div class="faq">
     <details>
       <summary>Can I bring someone?</summary>
-      <p>Your invitation lists everyone we've saved a seat for — you'll see the names when you RSVP. If we've got it wrong, tell us and we'll fix it.</p>
+      <p>Your invitation code brings up everyone we've saved a seat for — you'll see the names when you enter it. If we've got it wrong, tell us and we'll fix it.</p>
     </details>
     <details>
       <summary>Are kids invited?</summary>
@@ -382,6 +387,10 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
     <details>
       <summary>Where do I park?</summary>
       <p>[Free lot on site / street parking on [road]]. You can leave a car overnight and collect it by [time] the next day.</p>
+    </details>
+    <details>
+      <summary>I've lost my invitation code.</summary>
+      <p>Email us at <a href="mailto:[you@example.com]">[you@example.com]</a> and we'll send it back to you. It's six characters, printed under your name on the invitation.</p>
     </details>
     <details>
       <summary>I have a dietary restriction.</summary>
@@ -399,17 +408,19 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   <div class="wrap">
     <p class="label">Répondez s'il vous plaît</p>
     <h2 style="font-size:clamp(2.1rem,5vw,3.4rem)">Let us <span class="script">know.</span></h2>
-    <p class="lede" style="margin-top:1rem">By [Month Day, Year]. One form per invitation — find yours and it'll bring up everyone on it.</p>
+    <p class="lede" style="margin-top:1rem">By [Month Day, Year]. Enter the code from your invitation and it'll bring up everyone we've saved a seat for.</p>
 
     <div class="shell">
       <div class="progress" aria-hidden="true"><i class="done"></i><i></i><i></i></div>
 
       <div class="step live" data-step="1">
         <h3>Find your invitation</h3>
-        <p>Type your name as it appears on the envelope.</p>
+        <p>Your code is printed on the invitation, just under your name.</p>
         <div class="field">
-          <label for="lookup">Your name</label>
-          <input type="text" id="lookup" placeholder="First and last" autocomplete="name">
+          <label for="lookup">Invitation code</label>
+          <input type="text" id="lookup" class="code-input" placeholder="XXX-XXX"
+                 maxlength="7" autocomplete="off" autocapitalize="characters"
+                 spellcheck="false" inputmode="text">
         </div>
         <div class="err" id="err1" role="status"></div>
         <div class="row"><button class="btn" id="find">Find invitation</button></div>
@@ -502,9 +513,8 @@ const DEMO_LIST = [];  // only used when DEMO_MODE is true
     if(DEMO_MODE){
       await new Promise(r => setTimeout(r, 420));
       if(path === "/lookup"){
-        const q = body.name.trim().toLowerCase();
-        if(q.length < 2) return { found:false };
-        const hit = DEMO_LIST.find(h => h.guests.some(g => g.name.toLowerCase().includes(q)));
+        const q = String(body.code || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+        const hit = DEMO_LIST.find(h => h.code === q);
         return hit ? { found:true, party:hit } : { found:false };
       }
       console.log("RSVP payload →", body);
@@ -520,15 +530,21 @@ const DEMO_LIST = [];  // only used when DEMO_MODE is true
   const findBtn = document.getElementById("find");
   const lookup  = document.getElementById("lookup");
 
+  /* Auto-format as they type: uppercase, dash after three. */
+  lookup.addEventListener("input", () => {
+    const raw = lookup.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0,6);
+    lookup.value = raw.length > 3 ? raw.slice(0,3) + "-" + raw.slice(3) : raw;
+  });
+
   findBtn.addEventListener("click", async () => {
-    const name = lookup.value.trim();
+    const code = lookup.value.replace(/[^A-Za-z0-9]/g, "");
     say("err1","");
-    if(name.length < 2){ say("err1","Enter your first and last name."); return; }
+    if(code.length !== 6){ say("err1","Codes are six characters — check the invitation."); return; }
     findBtn.disabled = true; findBtn.textContent = "Looking…";
     try{
-      const res = await api("/lookup", { name });
+      const res = await api("/lookup", { code });
       if(!res.found){
-        say("err1","No invitation under that name. Try the spelling on the envelope, or email us and we'll sort it out.");
+        say("err1","That code didn't match anything. Check for a mistyped character, or email us and we'll sort it out.");
       } else {
         party = res.party;
         document.getElementById("party-hi").textContent = party.household;

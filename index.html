@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Syl &amp; Sarah &mdash; August 28, 2027</title>
+<title>Sarah &amp; Syl &mdash; August 28, 2027</title>
 <meta name="description" content="Saturday 28 August 2027 · Stonewall Estate, Delancey, New York. Details, travel, and RSVP.">
 
 <link rel="preload" as="image" href="meadow.jpg">
@@ -207,15 +207,7 @@ a{color:inherit}
 .story-photo{
   width:100%;height:auto;display:block;
   aspect-ratio:2/3;object-fit:cover;object-position:center 40%;
-}
-/* Soft edges on all four sides, painted in the page colour
-   rather than masked — works everywhere, no compositing. */
-.photo-fade{position:relative;display:block}
-.photo-fade::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    linear-gradient(to bottom, var(--paper) 0%, transparent 11%, transparent 89%, var(--paper) 100%),
-    linear-gradient(to right,  var(--paper) 0%, transparent 9%,  transparent 91%, var(--paper) 100%);
+  border-radius:clamp(.75rem,2vw,1.15rem);
 }
 .story-figure{margin:0}
 .story-figure figcaption{
@@ -393,11 +385,11 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 
 <!-- ══ HERO ══ -->
 <header class="hero">
-  <img class="hero-photo" src="meadow.jpg" alt="Syl and Sarah walking into a meadow at sunset" fetchpriority="high">
+  <img class="hero-photo" src="meadow.jpg" alt="Sarah and Syl walking into a meadow at sunset" fetchpriority="high">
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <p class="hero-eyebrow">We're getting married</p>
-    <h1 class="names">Syl<span class="amp">and</span>Sarah</h1>
+    <h1 class="names">Sarah<span class="amp">and</span>Syl</h1>
     <div class="hero-meta">
       <span style="--c:var(--poppy)">Saturday 28 August 2027</span>
       <span style="--c:var(--cobalt)">Stonewall Estate</span>
@@ -416,9 +408,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   <p class="label">How we got here</p>
   <div class="story">
     <figure class="story-figure">
-      <span class="photo-fade">
-        <img class="story-photo" src="forest_front.jpg" alt="Syl and Sarah walking hand in hand across a footbridge in the woods" loading="lazy">
-      </span>
+      <img class="story-photo" src="forest_front.jpg" alt="Sarah and Syl walking hand in hand across a footbridge in the woods" loading="lazy">
       <figcaption>[Where this was taken], [month year]</figcaption>
     </figure>
     <div>
@@ -476,7 +466,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 
 <!-- ══ PHOTO BAND ══ -->
 <div class="band">
-  <img class="band-photo" src="grass.jpg" alt="Syl and Sarah sitting together in a wildflower meadow at dusk" loading="lazy">
+  <img class="band-photo" src="grass.jpg" alt="Sarah and Syl sitting together in a wildflower meadow at dusk" loading="lazy">
 </div>
 
 <!-- ══ TRAVEL ══ -->
@@ -627,7 +617,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 </svg>
 
 <footer class="wrap">
-  <p>Syl &amp; Sarah &middot; 28 August 2027 &middot; Delancey, New York</p>
+  <p>Sarah &amp; Syl &middot; 28 August 2027 &middot; Delancey, New York</p>
 </footer>
 
 <script>

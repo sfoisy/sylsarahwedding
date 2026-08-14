@@ -7,6 +7,7 @@
 <title>Syl &amp; Sarah &mdash; [Month Day, Year]</title>
 <meta name="description" content="Ceremony details, travel, and RSVP.">
 
+<link rel="preload" as="image" href="meadow.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Serif:ital@1&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -96,10 +97,30 @@ a{color:inherit}
 .meadow-foot{margin-top:calc(var(--step) * -.35)}
 .meadow-flip{transform:scaleX(-1)}
 
-/* ══ HERO ════════════════════════════════════════════════ */
+/* ══ HERO ════════════════════════════════════════════════
+   A real field behind the drawn one. The scrim keeps the
+   left side readable; the couple sits in the clear right.
+   ═══════════════════════════════════════════════════════ */
 .hero{
   min-height:100svh;display:flex;flex-direction:column;justify-content:center;
   padding-bottom:clamp(9rem,22vh,15rem);position:relative;overflow:hidden;
+}
+.hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:68% center;z-index:0;
+}
+.hero-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to top, var(--paper) 0%, rgba(241,243,236,.55) 14%, transparent 34%),
+    linear-gradient(100deg, rgba(241,243,236,.94) 0%, rgba(241,243,236,.78) 34%,
+                    rgba(241,243,236,.28) 60%, rgba(241,243,236,.04) 82%);
+}
+@media(max-width:44rem){
+  .hero-photo{object-position:76% center}
+  .hero-scrim{background:
+    linear-gradient(to top, var(--paper) 0%, rgba(241,243,236,.6) 18%, transparent 44%),
+    linear-gradient(170deg, rgba(241,243,236,.9) 0%, rgba(241,243,236,.6) 42%, rgba(241,243,236,.2) 72%)}
 }
 .hero .wrap{position:relative;z-index:2}
 .hero-eyebrow{
@@ -132,6 +153,22 @@ a{color:inherit}
 /* ══ STORY ═══════════════════════════════════════════════ */
 .story{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr}
 @media(min-width:54rem){.story{grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr)}}
+.story-photo{
+  width:100%;height:auto;display:block;border-radius:2px;
+  aspect-ratio:2/3;object-fit:cover;object-position:center 40%;
+}
+.story-figure{margin:0}
+.story-figure figcaption{
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);margin-top:.85rem;
+}
+
+/* ══ FULL-WIDTH PHOTO BAND ═══════════════════════════════ */
+.band{
+  position:relative;width:100%;height:clamp(20rem,58vh,34rem);
+  overflow:hidden;margin-block:clamp(1rem,4vh,3rem);
+}
+.band img{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block}
 .story h2{font-size:clamp(2.1rem,5vw,3.4rem)}
 .story h2 .script{color:var(--orchid)}
 
@@ -255,6 +292,8 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 
 <!-- ══ HERO ══ -->
 <header class="hero">
+  <img class="hero-photo" src="meadow.jpg" alt="Syl and Sarah walking into a meadow at sunset" fetchpriority="high">
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <p class="hero-eyebrow">We're getting married</p>
     <h1 class="names">Syl<span class="amp">and</span>Sarah</h1>
@@ -274,8 +313,12 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 <section id="story" class="wrap">
   <p class="label">How we got here</p>
   <div class="story">
-    <h2>It started with <span class="script">a forecast</span> that got it completely wrong.</h2>
+    <figure class="story-figure">
+      <img class="story-photo" src="meadow_front.jpg" alt="Syl and Sarah walking through a field, laughing" loading="lazy">
+      <figcaption>[Where this was taken], [month year]</figcaption>
+    </figure>
     <div>
+      <h2 style="margin-bottom:1.5rem">It started with <span class="script">a forecast</span> that got it completely wrong.</h2>
       <p class="lede">[Two or three sentences. Where you met, what the weather was doing, the detail only the two of you would think to mention.]</p>
       <p>[A second paragraph if you want it — the proposal, the move, the dog. Keep it shorter than feels right. People are here for the address and the start time, and they'll like you more for getting to the point.]</p>
       <p>[Close with the invitation itself.]</p>
@@ -326,6 +369,11 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
     </li>
   </ul>
 </section>
+
+<!-- ══ PHOTO BAND ══ -->
+<div class="band">
+  <img src="walk.jpg" alt="Syl and Sarah walking across a wooden footbridge in the woods" loading="lazy">
+</div>
 
 <!-- ══ TRAVEL ══ -->
 <section id="travel" class="wrap">

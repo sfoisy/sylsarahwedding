@@ -469,17 +469,12 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 
 <script>
 /* ═══ CONFIG ═══════════════════════════════════════════════ */
-const RSVP_API  = "";     // ← Worker URL when you build it
-const DEMO_MODE = true;   // ← true = sample list below, no backend
+const RSVP_API  = "https://wedding-rsvp.sylfoisy.workers.dev";
+const DEMO_MODE = false;  // live — guest list comes from the D1 database
 const MEALS     = ["Beef", "Fish", "Vegetarian"];
 const MEAL_COLOR = ["var(--fig)", "var(--sky)", "var(--matcha)"];
 
-const DEMO_LIST = [
-  { id:"p001", household:"The Harrison family",
-    guests:[{id:"g1",name:"Marguerite Harrison"},{id:"g2",name:"David Harrison"},{id:"g3",name:"Tess Harrison"}] },
-  { id:"p002", household:"Jonah Okafor & guest",
-    guests:[{id:"g4",name:"Jonah Okafor"},{id:"g5",name:"Guest of Jonah Okafor",plusOne:true}] }
-];
+const DEMO_LIST = [];  // only used when DEMO_MODE is true
 
 /* ═══ MEADOW — grow on entry ═══════════════════════════════ */
 (function(){

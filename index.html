@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Syl &amp; Sarah &mdash; [Month Day, Year]</title>
-<meta name="description" content="Ceremony details, travel, and RSVP.">
+<title>Syl &amp; Sarah &mdash; August 28, 2027</title>
+<meta name="description" content="Saturday 28 August 2027 · Stonewall Estate, Delancey, New York. Details, travel, and RSVP.">
 
 <link rel="preload" as="image" href="meadow.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,65 +164,30 @@ a{color:inherit}
 }
 
 /* ══ FULL-WIDTH PHOTO BAND ═══════════════════════════════
-   Two photographs, not side by side — the kiss dissolves
-   into the sky it was taken under. Top and bottom feather
-   into the page so it reads as a passage, not a rectangle.
+   Fixed aspect ratios, not fixed heights, so the crop is
+   predictable at every width. Wide screens cut from the
+   bottom; phones cut from the right. Either way her shoes
+   stay out of frame.
    ═══════════════════════════════════════════════════════ */
 .band{
-  position:relative;width:100%;height:clamp(23rem,66vh,40rem);
+  position:relative;width:100%;
+  aspect-ratio:2.4/1;max-height:34rem;
   overflow:hidden;margin-block:clamp(1rem,4vh,3rem);background:var(--paper);
 }
-.band-sky{
+.band-photo{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 58%;
-}
-.band-kiss{
-  position:absolute;top:0;left:0;height:100%;width:56%;
-  object-fit:cover;object-position:58% center;
-  -webkit-mask-image:linear-gradient(to right,#000 0%,#000 46%,rgba(0,0,0,.45) 74%,transparent 97%);
-          mask-image:linear-gradient(to right,#000 0%,#000 46%,rgba(0,0,0,.45) 74%,transparent 97%);
+  object-fit:cover;object-position:center top;
 }
 .band::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    linear-gradient(to bottom, var(--paper) 0%, transparent 16%),
-    linear-gradient(to top,    var(--paper) 0%, transparent 18%);
+    linear-gradient(to bottom, var(--paper) 0%, transparent 15%),
+    linear-gradient(to top,    var(--paper) 0%, transparent 17%);
 }
 @media(max-width:44rem){
-  .band{height:clamp(20rem,52vh,26rem)}
-  .band-kiss{width:82%;object-position:56% center;
-    -webkit-mask-image:linear-gradient(to right,#000 0%,#000 56%,transparent 99%);
-            mask-image:linear-gradient(to right,#000 0%,#000 56%,transparent 99%)}
+  .band{aspect-ratio:1/1;max-height:none}
+  .band-photo{object-position:34% 38%}
 }
-.story h2{font-size:clamp(2.1rem,5vw,3.4rem)}
-.story h2 .script{color:var(--orchid)}
-
-/* ══ THE DAY ═════════════════════════════════════════════ */
-.day{list-style:none;margin:2.75rem 0 0;padding:0;max-width:47rem}
-.day li{
-  display:grid;grid-template-columns:1.6rem 4.4rem 1fr;gap:clamp(.85rem,3vw,1.6rem);
-  align-items:baseline;padding:1.2rem 0;border-top:1px solid var(--rule);
-}
-.day li:last-child{border-bottom:1px solid var(--rule)}
-.day svg{width:1.6rem;height:1.6rem;align-self:center;overflow:visible}
-.at{font-size:.82rem;font-weight:500;letter-spacing:.1em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
-.what{font-family:var(--display);font-size:1.42rem;line-height:1.16}
-.what small{display:block;font-family:var(--body);font-size:.87rem;color:var(--ink-soft);margin-top:.35rem;line-height:1.55}
-
-/* ══ CARDS — each one a different colour, like the glasses ══ */
-.cards{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:2.75rem}
-@media(min-width:44rem){.cards{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:66rem){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{
-  padding:1.7rem 1.5rem 1.6rem;background:var(--paper-warm);
-  border-radius:2px;border-top:3px solid var(--c);position:relative;
-}
-.card .tag{
-  font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--c);display:block;margin-bottom:.75rem;filter:brightness(.78);
-}
-.card h3{font-size:1.28rem;margin-bottom:.55rem}
-.card p{font-size:.91rem;color:var(--ink-soft);margin:0}
 
 /* ══ FAQ ═════════════════════════════════════════════════ */
 .faq{max-width:45rem;margin-top:2.75rem;border-top:1px solid var(--rule)}
@@ -323,9 +288,9 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
     <p class="hero-eyebrow">We're getting married</p>
     <h1 class="names">Syl<span class="amp">and</span>Sarah</h1>
     <div class="hero-meta">
-      <span style="--c:var(--poppy)">[Month Day, Year]</span>
-      <span style="--c:var(--cobalt)">[Venue]</span>
-      <span style="--c:var(--marigold)">[Town, New York]</span>
+      <span style="--c:var(--poppy)">Saturday 28 August 2027</span>
+      <span style="--c:var(--cobalt)">Stonewall Estate</span>
+      <span style="--c:var(--marigold)">Delancey, New York</span>
     </div>
     <a class="hero-cta" href="#rsvp">RSVP</a>
   </div>
@@ -359,78 +324,77 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   <ul class="day">
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--marigold)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--marigold)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--marigold)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--marigold)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--marigold)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">05:41</span>
+      <span class="at">6:21 am</span>
       <span class="what">Sunrise<small>Not an event. Just so you know what you're missing.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="0" cy="0" r="2" fill="var(--sky)"/><ellipse cx="4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(0 4.4 0.0)" fill="var(--sky)" opacity=".8"/><ellipse cx="3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(45 3.1 3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="0.0" cy="4.4" rx="2.5" ry="1.5" transform="rotate(90 0.0 4.4)" fill="var(--sky)" opacity=".8"/><ellipse cx="-3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(135 -3.1 3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="-4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(180 -4.4 0.0)" fill="var(--sky)" opacity=".8"/><ellipse cx="-3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(225 -3.1 -3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="-0.0" cy="-4.4" rx="2.5" ry="1.5" transform="rotate(270 -0.0 -4.4)" fill="var(--sky)" opacity=".8"/><ellipse cx="3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(315 3.1 -3.1)" fill="var(--sky)" opacity=".8"/></svg>
-      <span class="at">14:30</span>
-      <span class="what">Doors open<small>[Venue]. Find a seat, find a drink.</small></span>
+      <span class="at">[2:30 pm]</span>
+      <span class="what">Doors open<small>1595 Holmes Hollow Road. Follow the signs up the hill.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--orchid)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--orchid)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--orchid)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--orchid)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--orchid)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">15:00</span>
-      <span class="what">Ceremony<small>Outside if the sky cooperates. Under the tent if it doesn't.</small></span>
+      <span class="at">[3:00 pm]</span>
+      <span class="what">Ceremony<small>On the hilltop, looking out at the Catskills. In the barn if the weather says otherwise.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="3.0" cy="0.0" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="1.5" cy="2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-1.5" cy="2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-3.0" cy="0.0" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-1.5" cy="-2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="1.5" cy="-2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="0" cy="0" r="2.9" fill="var(--mint)"/></svg>
-      <span class="at">16:00</span>
-      <span class="what">Cocktails &amp; photographs<small>[Lawn / porch / barn]. Please be in some of them.</small></span>
+      <span class="at">[4:00 pm]</span>
+      <span class="what">Cocktails &amp; photographs<small>On the bluestone patio. Please be in some of them.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="0" cy="0" r="2" fill="var(--cobalt)"/><ellipse cx="4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(0 4.4 0.0)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(45 3.1 3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="0.0" cy="4.4" rx="2.5" ry="1.5" transform="rotate(90 0.0 4.4)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(135 -3.1 3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(180 -4.4 0.0)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(225 -3.1 -3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-0.0" cy="-4.4" rx="2.5" ry="1.5" transform="rotate(270 -0.0 -4.4)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(315 3.1 -3.1)" fill="var(--cobalt)" opacity=".8"/></svg>
-      <span class="at">18:00</span>
-      <span class="what">Dinner<small>Long tables, mismatched everything. You'll pick a main when you RSVP.</small></span>
+      <span class="at">[6:00 pm]</span>
+      <span class="what">Dinner<small>In the barn. Long tables, mismatched everything. You'll pick a main when you RSVP.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--poppy)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--poppy)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--poppy)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--poppy)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--poppy)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">20:14</span>
-      <span class="what">Sunset<small>About forty minutes of gold. We'll be outside for all of it.</small></span>
+      <span class="at">7:41 pm</span>
+      <span class="what">Sunset<small>About forty minutes of gold over the mountains. We'll be outside for all of it.</small></span>
     </li>
     <li>
       <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="3.0" cy="0.0" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="1.5" cy="2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-1.5" cy="2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-3.0" cy="0.0" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-1.5" cy="-2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="1.5" cy="-2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="0" cy="0" r="2.9" fill="var(--fig)"/></svg>
-      <span class="at">21:00</span>
-      <span class="what">Dancing<small>Until [time]. Request something on the RSVP form.</small></span>
+      <span class="at">[9:00 pm]</span>
+      <span class="what">Dancing<small>No curfew up here. Request something on the RSVP form.</small></span>
     </li>
   </ul>
 </section>
 
 <!-- ══ PHOTO BAND ══ -->
 <div class="band">
-  <img class="band-sky"  src="clouds.jpg" alt="" aria-hidden="true" loading="lazy">
-  <img class="band-kiss" src="kiss.jpg"   alt="Syl lifting Sarah off her feet in a field at dusk" loading="lazy">
+  <img class="band-photo" src="grass.jpg" alt="Syl and Sarah sitting together in a wildflower meadow at dusk" loading="lazy">
 </div>
 
 <!-- ══ TRAVEL ══ -->
 <section id="travel" class="wrap">
   <p class="label">Getting there &amp; staying</p>
-  <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);max-width:15ch">It's a drive. <span class="script">Worth it.</span></h2>
+  <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);max-width:15ch">It's a drive. <span class="script">Make a weekend of it.</span></h2>
 
   <div class="cards">
     <div class="card" style="--c:var(--cobalt)">
       <span class="tag">By air</span>
       <h3>Nearest airports</h3>
-      <p>[Ottawa YOW — 1h20m] · [Syracuse SYR — 2h30m] · [Montréal YUL — 2h]. Rent a car; there's no other way in.</p>
+      <p>Binghamton (BGM) about 1h15 · Albany (ALB) about 1h45 · Newburgh (SWF) about 1h45. The New York City airports are roughly three hours. Rent a car either way — there's no other way in.</p>
     </div>
     <div class="card" style="--c:var(--orchid)">
       <span class="tag">Beds</span>
       <h3>[Hotel name]</h3>
-      <p>[Address]. Block held under "[block name]" until [date], at [rate] a night.</p>
+      <p>[Address in Delhi or Margaretville]. Block held under "[block name]" until [date], at [rate] a night.</p>
     </div>
     <div class="card" style="--c:var(--mint)">
       <span class="tag">Beds</span>
-      <h3>[Second option]</h3>
-      <p>[Address], [distance] from the venue. Good for families — kitchens in every unit.</p>
+      <h3>Rent a house</h3>
+      <p>Delhi, Andes, Bovina and Margaretville are all within half an hour and full of places to rent. Worth splitting one with people you like — there's not much hotel stock up here, and it goes early.</p>
     </div>
     <div class="card" style="--c:var(--sky)">
-      <span class="tag">Border</span>
-      <h3>Coming from Canada</h3>
-      <p>[Crossing name] is closest. Bring a passport, and allow an extra 45 minutes on a Saturday.</p>
+      <span class="tag">The drive</span>
+      <h3>Getting up the hill</h3>
+      <p>About three hours from New York City, two from Albany. The last stretch is winding country road with patchy phone signal — download the directions before you leave the highway.</p>
     </div>
     <div class="card" style="--c:var(--matcha)">
       <span class="tag">Wear</span>
       <h3>Dress</h3>
-      <p>[Garden formal]. The ceremony is on grass, so heels will sink. Evenings here drop to [50°F] — bring a layer you don't mind being photographed in.</p>
+      <p>[Garden formal]. The ceremony is on a grass hilltop, so heels will sink. Late-August evenings in the Catskills drop into the fifties once the sun goes — bring a layer you don't mind being photographed in.</p>
     </div>
     <div class="card" style="--c:var(--marigold)">
       <span class="tag">Gifts</span>
@@ -456,11 +420,11 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
     </details>
     <details>
       <summary>What if it rains?</summary>
-      <p>Then it rains. There's a tent, everything moves under it, and the day runs exactly on schedule. Don't check the forecast on our behalf — one of us already is, hourly.</p>
+      <p>Then it rains. Everything moves into the barn and the day runs exactly on schedule. Don't check the forecast on our behalf — one of us already is, hourly.</p>
     </details>
     <details>
       <summary>Where do I park?</summary>
-      <p>[Free lot on site / street parking on [road]]. You can leave a car overnight and collect it by [time] the next day.</p>
+      <p>There's parking on the property. You can leave a car overnight and collect it the next morning — please do, if there's any doubt.</p>
     </details>
     <details>
       <summary>I've lost my invitation code.</summary>
@@ -472,7 +436,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
     </details>
     <details>
       <summary>When do I need to RSVP by?</summary>
-      <p><strong>[Month Day, Year].</strong> After that the caterer's count is locked and we genuinely can't add anyone.</p>
+      <p><strong>Saturday 24 July 2027.</strong> After that the caterer's count is locked and we genuinely can't add anyone.</p>
     </details>
   </div>
 </section>
@@ -482,7 +446,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   <div class="wrap">
     <p class="label">Répondez s'il vous plaît</p>
     <h2 style="font-size:clamp(2.1rem,5vw,3.4rem)">Let us <span class="script">know.</span></h2>
-    <p class="lede" style="margin-top:1rem">By [Month Day, Year]. Enter the code from your invitation and it'll bring up everyone we've saved a seat for.</p>
+    <p class="lede" style="margin-top:1rem">By 24 July 2027. Enter the code from your invitation and it'll bring up everyone we've saved a seat for.</p>
 
     <div class="shell">
       <div class="progress" aria-hidden="true"><i class="done"></i><i></i><i></i></div>
@@ -535,7 +499,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 
       <div class="step" data-step="4">
         <div class="done-mark" id="done-head">Thank you.</div>
-        <p id="done-body">We've got it. [Month Day] — we'll see you there.</p>
+        <p id="done-body">We've got it. 28 August 2027 — we'll see you there.</p>
         <div class="row"><button class="btn ghost" id="again">Change your answer</button></div>
       </div>
 
@@ -549,7 +513,7 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 </svg>
 
 <footer class="wrap">
-  <p>Syl &amp; Sarah &middot; [Month Day, Year] &middot; [Town], New York</p>
+  <p>Syl &amp; Sarah &middot; 28 August 2027 &middot; Delancey, New York</p>
 </footer>
 
 <script>

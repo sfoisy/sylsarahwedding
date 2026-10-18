@@ -308,7 +308,7 @@ footer p{max-width:none;margin:0}
 </header>
 
 <figure class="plate">
-  <img class="bw" src="meadow-crop-3.jpg" alt="Sarah and Syl walking into a meadow at sunset" style="aspect-ratio: 5588 / 2555; object-position: 50% 50%;">
+  <img src="meadow-crop-3.jpg" alt="Sarah and Syl walking into a meadow at sunset" style="aspect-ratio: 5588 / 2555; object-position: 50% 50%;">
 </figure>
 
 <!-- STORY -->
@@ -316,7 +316,7 @@ footer p{max-width:none;margin:0}
   <div class="story">
     <figure>
       
-      <img class="bw" src="forest_front.jpg" alt="Sarah and Syl walking hand in hand across a footbridge in the woods" loading="lazy"><figcaption>Photo from our engagement, the weekend of August 10th, 2025.</figcaption>
+      <img src="forest_front.jpg" alt="Sarah and Syl walking hand in hand across a footbridge in the woods" loading="lazy"><figcaption>Photo from our engagement, the weekend of August 10th, 2025.</figcaption>
     </figure>
     <div>
       
@@ -353,7 +353,7 @@ footer p{max-width:none;margin:0}
 <section id="travel" class="wrap" data-nav="Venue">
   <div class="story flip">
     <figure>
-      <img class="bw" src="stonewall-2.jpg" alt="Stonewall Estate in Delancey, New York" loading="lazy">
+      <img src="stonewall-2.jpg" alt="Stonewall Estate in Delancey, New York" loading="lazy">
       <figcaption>Photo of Stonewall Estate</figcaption>
     </figure>
     <div>
@@ -400,7 +400,7 @@ footer p{max-width:none;margin:0}
       <form class="step live" data-step="code" id="rsvp-find" novalidate="">
         <div class="field">
           <label for="lookup" style="text-align:center">Invitation code</label>
-          <input type="text" id="lookup" class="code-input" placeholder="XXX-XXX" maxlength="7" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text">
+          <input type="text" id="lookup" class="code-input" placeholder="––– –––" maxlength="7" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text">
         </div>
         <div class="err" id="err1" role="status"></div>
         <div class="row"><button class="btn" type="submit" id="find">RSVP</button></div>
@@ -435,16 +435,10 @@ footer p{max-width:none;margin:0}
         <div class="row"><button class="btn ghost" type="button" id="again">Change your answer</button></div>
       </div>
 
-      <p class="note">Something not working? Write to <a href="mailto:[you@example.com]">[you@example.com]</a> and we'll put you down by hand.</p>
+      <p class="note">If the code isn't working, please email us &lt;3 (<a href="mailto:sylfoisy@gmail.com">sylfoisy@gmail.com</a>)</p>
     </div>
   </div>
 </section>
-
-<footer>
-  
-  <p class="caps">Sarah &amp; Syl · 28 August 2027 · Delancey, New York</p>
-</footer>
-
 <script>
 /* ═══ CONFIG ═══════════════════════════════════════════════ */
 const RSVP_API  = "https://wedding-rsvp.sylfoisy.workers.dev";
@@ -781,8 +775,8 @@ const BLOCKS={
   'Subheading':'<h3>New subheading</h3>',
   'Small label':'<p class="caps">Small label</p>',
   'Link':'<a href="#rsvp">Link text</a>',
-  'Image':'<img class="bw" src="photo.jpg" alt="">',
-  'Full-width photo':'<figure class="plate"><img class="bw" src="photo.jpg" alt=""></figure>',
+  'Image':'<img src="photo.jpg" alt="">',
+  'Full-width photo':'<figure class="plate"><img src="photo.jpg" alt=""></figure>',
   'Monogram':'<img src="logo.png" alt="" style="width:6rem;margin:2rem auto">',
   'FAQ question':'<details><summary>New question?</summary><p>The answer.</p></details>',
   'Thin line':'<hr style="border:0;border-top:1px solid var(--rule);margin:3rem auto;max-width:44rem">',
@@ -1567,7 +1561,7 @@ async function addImages(list,{target=null,replace=null}={}){
   }
   if(target&&(target===document.body||!target.isConnected)) target=null;
   for(const r of ready){
-    const i=el('img',{src:imgURL.get(r.name),alt:'','data-ed-src':r.name,class:'bw',loading:'lazy'});
+    const i=el('img',{src:imgURL.get(r.name),alt:'','data-ed-src':r.name,loading:'lazy'});
     if(target) target.after(i); else { const f=document.querySelector('body > footer'); f?f.before(i):document.body.append(i); }
     target=last=i;
   }

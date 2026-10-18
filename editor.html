@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Sarah &amp; Syl 2027</title>
-<meta name="description" content="Saturday 28 August 2027 · Stonewall Estate, Delancey, New York. Details, travel, and RSVP.">
+<meta property="og:title" content="Sarah &amp; Syl">
+<meta property="og:type" content="website">
+<meta name="twitter:title" content="Sarah &amp; Syl">
 <meta name="theme-color" content="#000000">
 
 <link rel="icon" type="image/png" href="logo.png">
@@ -90,7 +92,7 @@ body[data-menu="open"] .menu{opacity:1;visibility:visible;transform:none;transit
   transition:padding-left .3s cubic-bezier(.2,.8,.2,1),background .2s;
 }
 .menu a .n{font-family:var(--text);font-size:.68rem;letter-spacing:.18em;color:var(--soft);min-width:1.4rem}
-.menu a:hover{padding-left:1.75rem;background:rgba(0,0,0,.035)}
+@media (hover:hover){.menu a:hover{padding-left:1.75rem;background:rgba(0,0,0,.035)}}
 .menu a.here{font-style:italic}
 body[data-menu="open"] .menu li{animation:menu-in .4s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0) * 45ms)}
 @keyframes menu-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
@@ -200,10 +202,10 @@ textarea{resize:vertical;min-height:4.5rem}
   padding:1rem 2rem;border:1px solid var(--white);border-radius:0;cursor:pointer;
   background:var(--white);color:var(--black);transition:background .2s,color .2s;
 }
-.btn:hover{background:transparent;color:var(--white)}
+@media (hover:hover){.btn:hover{background:transparent;color:var(--white)}}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .btn.ghost{background:transparent;color:var(--white);border-color:var(--rule)}
-.btn.ghost:hover{border-color:var(--white)}
+@media (hover:hover){.btn.ghost:hover{border-color:var(--white)}}
 .row{display:flex;gap:.8rem;justify-content:center;margin-top:2.2rem;flex-wrap:wrap}
 
 .guest{padding:1.6rem 0;border-top:1px solid var(--rule)}
@@ -215,7 +217,7 @@ textarea{resize:vertical;min-height:4.5rem}
   margin:0;cursor:pointer;padding:.65rem 1.1rem;border:1px solid var(--rule);
   color:var(--soft);transition:all .18s;
 }
-.choice label:hover{border-color:var(--white);color:var(--white)}
+@media (hover:hover){.choice label:hover{border-color:var(--white);color:var(--white)}}
 .choice input:checked + label{background:var(--white);color:var(--black);border-color:var(--white)}
 .choice input:focus-visible + label{outline:1px solid var(--white);outline-offset:3px}
 .sub{display:none;margin-top:1.4rem}
@@ -233,7 +235,7 @@ textarea{resize:vertical;min-height:4.5rem}
 .extras[open] summary::after{content:"\2212"}
 .extras[open]{padding-bottom:.4rem}
 .linkish{background:none;border:0;padding:0;cursor:pointer;font:inherit;font-size:.95rem;color:var(--soft);text-decoration:underline;text-underline-offset:.2em}
-.linkish:hover{color:var(--white)}
+@media (hover:hover){.linkish:hover{color:var(--white)}}
 .switch{text-align:center;margin:1.6rem auto 0}
 .note{text-align:center;font-size:.92rem;color:var(--soft);margin:2rem auto 0}
 .err{text-align:center;color:var(--white);font-style:italic;margin-top:1rem;min-height:1.4em}
@@ -249,7 +251,7 @@ textarea{resize:vertical;min-height:4.5rem}
 #rsvp-find .err:not(:empty){padding-bottom:.9rem}
 #rsvp-find .row{margin:0;border-top:1px dashed var(--rule)}
 #rsvp-find .btn{width:100%;border:0;padding:1.1rem;background:transparent;color:var(--white);transition:background .25s,color .25s,letter-spacing .4s}
-#rsvp-find .btn:hover{background:var(--white);color:var(--black);letter-spacing:.3em}
+@media (hover:hover){#rsvp-find .btn:hover{background:var(--white);color:var(--black);letter-spacing:.3em}}
 #rsvp-find .btn[disabled]{opacity:.5}
 #rsvp-find.shake{animation:shake .4s}
 @keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
@@ -281,6 +283,52 @@ html.anim.wait .hero *{animation-play-state:paused!important}
 footer{background:var(--black);color:rgba(255,255,255,.55);text-align:center;padding:0 var(--gut) 4rem}
 footer img{width:4.5rem;margin:0 auto 1.6rem;opacity:.9}
 footer p{max-width:none;margin:0}
+
+/* ══ Phones & small screens ═══════════════════════════════ */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;overflow-x:clip}
+img{max-width:100%}
+.wrap{padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.menu-btn{top:calc(clamp(1rem,3vh,1.75rem) + env(safe-area-inset-top));right:max(var(--gut),env(safe-area-inset-right));padding:.75rem 0 .75rem .75rem}
+.menu{top:calc(clamp(1rem,3vh,1.75rem) + env(safe-area-inset-top) + 3rem);right:max(var(--gut),env(safe-area-inset-right));max-width:calc(100vw - 2 * var(--gut))}
+.hero{padding-top:max(6rem,calc(env(safe-area-inset-top) + 4rem))}
+.hero .when{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:.5rem}
+.hero-links a{padding:.6rem .2rem .3rem}
+.story a.caps{display:inline-block;padding:.6rem 0}
+.note a{padding:.4rem 0}
+#rsvp-find .btn{min-height:3.2rem}
+.rsvp{padding-bottom:calc(var(--step) + env(safe-area-inset-bottom))}
+
+@media (max-width:40rem){
+  .hero{padding-inline:1.25rem}
+  .hero h1{font-size:clamp(2.8rem,15vw,4.2rem)}
+  .hero .when{flex-direction:column;gap:.55rem;letter-spacing:.2em}
+  .hero .when .sep{display:none}
+  .head{margin-bottom:1.8rem}
+  h2{font-size:clamp(2rem,9vw,2.6rem)}
+  .story{gap:1.8rem}
+  .story .lede{font-size:1.08em}
+  .day li{padding:1.2rem 0}
+  .day h3{font-size:1.5rem}
+  .faq summary{font-size:1.3rem;padding:1.15rem 2.2rem 1.15rem 0}
+  .guest-name{font-size:1.45rem}
+  .choice label{padding:.75rem 1rem}
+  .choice.big label{flex:1 1 100%}
+  .row .btn{flex:1 1 auto}
+  .menu a{font-size:1.3rem;padding:.7rem 1.3rem}
+}
+@media (max-width:22rem){
+  :root{--gut:1rem}
+  .code-input{letter-spacing:.2em}
+}
+/* landscape phones: keep the opening screen from overflowing */
+@media (max-height:32rem) and (orientation:landscape){
+  .hero{min-height:auto;padding-top:max(4rem,calc(env(safe-area-inset-top) + 3rem));padding-bottom:3rem}
+  .hero .mono{width:5.5rem;margin-bottom:1rem}
+  .hero h1{font-size:3rem}
+  .hero .when{margin-top:1rem}
+  .hero-links{margin-top:1.4rem}
+}
 </style><style id="ed-theme" data-json="{&quot;vars&quot;:{&quot;--step&quot;:&quot;15mm&quot;}}">:root{--step:15mm}
 </style>
 </head>
@@ -433,7 +481,7 @@ footer p{max-width:none;margin:0}
         <div class="row"><button class="btn ghost" type="button" id="again">Change your answer</button></div>
       </div>
 
-      <p class="note">If the code isn't working, please email us &lt;3 (<a href="mailto:sylfoisy@gmail.com">sylfoisy@gmail.com</a>)</p>
+      <p class="note">If the code isn't working, please email us &lt;3 <span style="white-space:nowrap">(<a href="mailto:sylfoisy@gmail.com">sylfoisy@gmail.com</a>)</span></p>
     </div>
   </div>
 </section>

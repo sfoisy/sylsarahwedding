@@ -287,7 +287,6 @@ footer p{max-width:none;margin:0}
 <button class="menu-btn caps" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
 <nav class="menu" id="menu" aria-label="Sections">
   <ul>
-    <li><a href="#story">Our story</a></li>
     <li><a href="#day">Schedule</a></li>
     <li><a href="#travel">Venue</a></li>
     <li><a href="#faq">FAQs</a></li>
@@ -313,7 +312,7 @@ footer p{max-width:none;margin:0}
 </figure>
 
 <!-- STORY -->
-<section id="story" class="wrap" data-nav="Our story">
+<section id="story" class="wrap" data-nav="Our story" data-nav-hide>
   <div class="story">
     <figure>
       
@@ -514,7 +513,7 @@ const READY = new Promise(done => {
   const btn  = document.getElementById("menuBtn");
   const menu = document.getElementById("menu");
   if(!btn || !menu) return;
-  const sections = [...document.querySelectorAll("section[id]")].filter(s => s.dataset.nav || s.querySelector("h2"));
+  const sections = [...document.querySelectorAll("section[id]")].filter(s => !s.hasAttribute("data-nav-hide") && (s.dataset.nav || s.querySelector("h2")));  // add data-nav-hide to a section to keep it out of the menu
   const ul = menu.querySelector("ul") || menu.appendChild(document.createElement("ul"));
   ul.innerHTML = sections.map((s, i) => {
     const name = s.dataset.nav || s.querySelector("h2").textContent.trim();
@@ -565,12 +564,14 @@ const READY = new Promise(done => {
   function paint(){
     queued = false;
     if(document.documentElement.classList.contains("ed-on")) return;   // not inside the editor
-    const mid = innerHeight / 2, reach = innerHeight * .55;
+    /* In: colour builds as a photo rises to the middle of the screen.
+       Out: it stays in full colour a while past the middle, then fades slowly. */
+    const mid = innerHeight / 2, reachIn = innerHeight * .55, hold = innerHeight * .2, reachOut = innerHeight * .8;
     document.querySelectorAll("img.bw").forEach(img => {
       const r = img.getBoundingClientRect();
       if(r.bottom < -50 || r.top > innerHeight + 50){ img.style.setProperty("--c", 0); return; }
-      const d = Math.abs(r.top + r.height / 2 - mid);
-      const k = Math.max(0, Math.min(1, 1 - d / reach));
+      const d = r.top + r.height / 2 - mid;   // above 0: still coming up; below 0: moving past
+      const k = Math.max(0, Math.min(1, d >= 0 ? 1 - d / reachIn : 1 - Math.max(0, -d - hold) / reachOut));
       img.style.setProperty("--c", (k * k * (3 - 2 * k)).toFixed(3));   // smooth in, smooth out
     });
   }

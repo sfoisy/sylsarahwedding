@@ -1,47 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Sarah &amp; Syl &mdash; August 28, 2027</title>
+<title>Sarah &amp; Syl — August 28, 2027</title>
 <meta name="description" content="Saturday 28 August 2027 · Stonewall Estate, Delancey, New York. Details, travel, and RSVP.">
+<meta name="theme-color" content="#000000">
 
-<link rel="preload" as="image" href="meadow.jpg">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preload" as="image" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Serif:ital@1&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
 
 <style>
-/* ══════════════════════════════════════════════════════════
-   TOKENS — pulled from the Birdy Grey swatches and the
-   mismatched glassware. The rule for this page: no two
-   things share a colour if they sit side by side.
-   ══════════════════════════════════════════════════════════ */
+/* Black, white, and one typeface family's worth of voice.
+   The monogram sets the tone; everything else stays out of its way. */
 :root{
-  --fig:#6B2440;
-  --fig-deep:#4A1830;
-  --orchid:#BE7A9C;
-  --sky:#A6C4DE;
-  --mint:#B4D2C0;
-  --matcha:#93A886;
-  --marigold:#E0A03C;
-  --cobalt:#3E5FA3;
-  --poppy:#CE5539;
+  --black:#000;
+  --white:#fff;
+  --paper:#FAFAF8;
+  --ink:#141414;
+  --soft:#6E6E6A;
+  --rule:#DCDCD7;
 
-  --paper:#F1F3EC;         /* pale sage-white, like linen in shade */
-  --paper-warm:#E9EBE0;
-  --ink:#2A2B26;
-  --ink-soft:rgba(42,43,38,.62);
-  --rule:rgba(42,43,38,.15);
+  --display:"Cormorant Garamond",Georgia,serif;
+  --text:"EB Garamond",Georgia,serif;
 
-  --display:"Gloock",Georgia,serif;
-  --script:"Instrument Serif",Georgia,serif;
-  --body:"Karla",system-ui,-apple-system,sans-serif;
-
-  --measure:33rem;
-  --gut:clamp(1.25rem,5vw,4rem);
-  --step:clamp(4.5rem,11vh,8rem);
+  --measure:34rem;
+  --gut:clamp(1.25rem,6vw,4rem);
+  --step:clamp(5rem,13vh,9rem);
 }
 
 *{box-sizing:border-box}
@@ -50,561 +39,352 @@ html{scroll-behavior:smooth}
 
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--body);font-weight:400;
-  font-size:clamp(1rem,.96rem + .2vw,1.08rem);line-height:1.68;
-  -webkit-font-smoothing:antialiased;
+  font-family:var(--text);font-size:clamp(1.06rem,1rem + .25vw,1.2rem);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+:focus-visible{outline:1px solid currentColor;outline-offset:4px}
+p{margin:0 0 1.1em;max-width:var(--measure)}
 
-.wrap{max-width:70rem;margin-inline:auto;padding-inline:var(--gut)}
-section{padding-block:var(--step);position:relative}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0}
+h2{font-size:clamp(2.2rem,5.5vw,3.6rem);letter-spacing:-.005em}
+h2 em,h1 em{font-style:italic;font-weight:300}
 
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.06;margin:0;letter-spacing:-.01em}
-.script{font-family:var(--script);font-style:italic}
-.label{
-  font-family:var(--body);font-size:.7rem;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);
-  margin:0 0 1.4rem;display:flex;align-items:center;gap:.7rem;
+.caps{
+  font-family:var(--text);font-size:.74rem;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;
 }
-.label::before{content:"";width:1.6rem;height:1px;background:currentColor;opacity:.5}
-.lede{font-size:1.16em;color:var(--ink-soft);max-width:var(--measure)}
-p{max-width:var(--measure)}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--fig);outline-offset:3px}
+.wrap{max-width:68rem;margin-inline:auto;padding-inline:var(--gut)}
+section{padding-block:var(--step)}
 
-/* ══ THE MEADOW — the signature ═══════════════════════════
-   One generated band of wildflowers, reused. Stems draw
-   themselves upward on scroll; blooms open after.
-   ═══════════════════════════════════════════════════════ */
-.meadow{display:block;width:100%;height:auto;pointer-events:none}
-.stalk{stroke:var(--matcha);stroke-width:1.5;stroke-linecap:round;opacity:.75}
-.leaf{fill:var(--matcha);opacity:.55}
-.seed{fill:#4A3B22}
-.fig{fill:var(--fig)} .orchid{fill:var(--orchid)} .sky{fill:var(--sky)}
-.mint{fill:var(--mint)} .matcha{fill:var(--matcha)} .marigold{fill:var(--marigold)}
-.cobalt{fill:var(--cobalt)} .poppy{fill:var(--poppy)}
+.head{text-align:center;margin-bottom:clamp(3rem,7vh,4.5rem)}
+.head .caps{color:var(--soft);margin:0 auto 1.25rem;max-width:none}
+.head p:not(.caps){margin:1.4rem auto 0;color:var(--soft)}
 
-.stem{transform-origin:bottom center;transform:translateY(14px) scaleY(.55);opacity:0}
-.grown .stem{
-  transform:none;opacity:1;
-  transition:transform 1.15s cubic-bezier(.16,.9,.3,1) var(--d),
-             opacity .8s ease var(--d);
+/* ── Menu ── */
+.menu-btn{
+  position:fixed;top:clamp(1rem,3vh,1.75rem);right:var(--gut);z-index:60;
+  background:none;border:0;padding:.4rem 0;cursor:pointer;color:var(--white);
+  mix-blend-mode:difference;
 }
-@media (prefers-reduced-motion:reduce){
-  .stem{transform:none;opacity:1}
-  .grown .stem{transition:none}
+.menu{
+  position:fixed;inset:0;z-index:55;background:var(--black);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s;
 }
-.meadow-hero{position:absolute;left:0;right:0;bottom:-1px;z-index:1}
-.meadow-foot{margin-top:calc(var(--step) * -.35)}
-.meadow-flip{transform:scaleX(-1)}
+body[data-menu="open"] .menu{opacity:1;visibility:visible;transition:opacity .35s ease}
+.menu ul{list-style:none;margin:0;padding:0;text-align:center}
+.menu li + li{margin-top:.6rem}
+.menu a{
+  font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,7vw,3.4rem);
+  text-decoration:none;line-height:1.3;
+}
+.menu a:hover{font-style:italic}
+@media (prefers-reduced-motion:reduce){.menu,body[data-menu="open"] .menu{transition:none}}
 
-/* ══ NAV — three lines, top right, always reachable ═════ */
-.nav{position:fixed;top:clamp(.9rem,2.5vh,1.6rem);right:clamp(.9rem,3vw,2rem);z-index:60}
-.nav-btn{
-  width:2.9rem;height:2.9rem;border-radius:100px;cursor:pointer;
-  border:1px solid rgba(42,43,38,.12);background:rgba(241,243,236,.82);
-  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.32rem;
-  padding:0;transition:background .2s;
-}
-.nav-btn:hover{background:rgba(241,243,236,.95)}
-.nav-btn span{
-  display:block;width:1.05rem;height:1.5px;background:var(--ink);border-radius:2px;
-  transition:transform .28s cubic-bezier(.2,.8,.3,1),opacity .18s;
-}
-.nav[data-open="true"] .nav-btn span:nth-child(1){transform:translateY(.47rem) rotate(45deg)}
-.nav[data-open="true"] .nav-btn span:nth-child(2){opacity:0}
-.nav[data-open="true"] .nav-btn span:nth-child(3){transform:translateY(-.47rem) rotate(-45deg)}
-@media (prefers-reduced-motion:reduce){.nav-btn span{transition:none}}
-
-.nav-panel{
-  position:absolute;top:3.5rem;right:0;min-width:12.5rem;
-  background:rgba(241,243,236,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(42,43,38,.1);border-radius:3px;padding:.5rem;
-  box-shadow:0 18px 40px -22px rgba(42,43,38,.4);
-  opacity:0;transform:translateY(-6px);pointer-events:none;
-  transition:opacity .22s ease,transform .22s cubic-bezier(.2,.8,.3,1);
-}
-.nav[data-open="true"] .nav-panel{opacity:1;transform:none;pointer-events:auto}
-.nav-panel a{
-  display:flex;align-items:center;gap:.7rem;padding:.62rem .8rem;border-radius:2px;
-  text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.02em;
-  color:var(--ink);transition:background .16s;
-}
-.nav-panel a:hover{background:rgba(42,43,38,.06)}
-.nav-panel a::before{content:"";width:.42rem;height:.42rem;border-radius:50%;background:var(--c);flex:none}
-@media (prefers-reduced-motion:reduce){.nav-panel{transition:none}}
-
-/* ══ COUNTDOWN ═══════════════════════════════════════════ */
-.countdown{
-  margin:clamp(1.4rem,3.5vh,2.2rem) 0 0;max-width:none;
-  display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap;
-}
-.cd-num{
-  font-family:var(--display);font-size:clamp(2.4rem,6vw,3.4rem);line-height:.9;
-  color:var(--fig);letter-spacing:-.02em;font-variant-numeric:tabular-nums;
-}
-.cd-label{
-  font-size:.76rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--ink-soft);
-}
-
-/* ══ HERO ════════════════════════════════════════════════
-   A real field behind the drawn one. The scrim keeps the
-   left side readable; the couple sits in the clear right.
-   ═══════════════════════════════════════════════════════ */
+/* ── Hero: the monogram on black ── */
 .hero{
-  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  padding-bottom:clamp(9rem,22vh,15rem);position:relative;overflow:hidden;
+  background:var(--black);color:var(--white);min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:6rem var(--gut) 5rem;
 }
-.hero-photo{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:68% center;z-index:0;
-}
-.hero-scrim{
-  position:absolute;inset:0;z-index:1;
-  background:
-    linear-gradient(to top, var(--paper) 0%, rgba(241,243,236,.55) 14%, transparent 34%),
-    linear-gradient(100deg, rgba(241,243,236,.94) 0%, rgba(241,243,236,.78) 34%,
-                    rgba(241,243,236,.28) 60%, rgba(241,243,236,.04) 82%);
-}
-@media(max-width:44rem){
-  .hero-photo{object-position:76% center}
-  .hero-scrim{background:
-    linear-gradient(to top, var(--paper) 0%, rgba(241,243,236,.6) 18%, transparent 44%),
-    linear-gradient(170deg, rgba(241,243,236,.9) 0%, rgba(241,243,236,.6) 42%, rgba(241,243,236,.2) 72%)}
-}
-.hero .wrap{position:relative;z-index:2}
-.hero-eyebrow{
-  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink-soft);margin:0 0 clamp(1.5rem,4vh,2.5rem);
-}
-.names{font-family:var(--display);font-size:clamp(3.4rem,13vw,9rem);line-height:.92;letter-spacing:-.025em}
-.names .amp{
-  display:block;font-family:var(--script);font-style:italic;
-  font-size:.36em;color:var(--orchid);margin:.06em 0 .04em .04em;letter-spacing:0;
-}
-.hero-meta{
-  margin-top:clamp(1.6rem,4vh,2.6rem);display:flex;flex-wrap:wrap;
-  gap:.65rem 1.5rem;align-items:center;
-}
-.hero-meta span{
-  font-size:.74rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  display:inline-flex;align-items:center;gap:.6rem;
-}
-.hero-meta span::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--c,var(--matcha))}
-.hero-cta{
-  margin-top:clamp(2rem,5vh,3rem);display:inline-block;
-  font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  text-decoration:none;padding:.9rem 1.9rem;border-radius:100px;
-  background:var(--fig);color:var(--paper);transition:background .2s,transform .1s;
-}
-.hero-cta:hover{background:var(--fig-deep)}
-.hero-cta:active{transform:translateY(1px)}
+.hero .mono{width:clamp(8.5rem,20vw,13rem);height:auto;margin-bottom:clamp(2rem,5vh,3rem)}
+.hero h1{font-weight:300;font-size:clamp(3rem,10vw,6.4rem);letter-spacing:.01em;line-height:1}
+.hero h1 em{font-size:.6em;padding-inline:.15em}
+.hero .when{margin:clamp(1.6rem,4vh,2.4rem) auto 0;max-width:none;color:rgba(255,255,255,.75)}
+.hero .when span{white-space:nowrap}
+.hero .when .sep{padding-inline:.9em;opacity:.5}
+.hero-links{margin-top:clamp(2.4rem,6vh,3.5rem);display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+.hero-links a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:.25rem}
+.hero-links a:hover{border-color:var(--white)}
+.countdown{margin:0;color:rgba(255,255,255,.55);max-width:none}
 
-/* ══ STORY ═══════════════════════════════════════════════ */
-.story{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr}
-@media(min-width:54rem){.story{grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr)}}
-.story-photo{
-  width:100%;height:auto;display:block;
-  aspect-ratio:2/3;object-fit:cover;object-position:center 40%;
-  border-radius:clamp(.75rem,2vw,1.15rem);
-}
-.story-figure{margin:0}
-.story-figure figcaption{
-  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-soft);margin-top:.85rem;
-}
+/* ── Photographs, in black and white ── */
+.bw{filter:grayscale(1) contrast(1.04)}
+.plate{margin:0}
+.plate img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:68% center}
+@media(max-width:44rem){.plate img{aspect-ratio:4/5;object-position:72% center}}
+.plate.lower img{object-position:center 30%}
+@media(max-width:44rem){.plate.lower img{object-position:46% 45%}}
 
-/* ══ FULL-WIDTH PHOTO BAND ═══════════════════════════════
-   Fixed aspect ratio, not fixed height, so the crop stays
-   predictable at every width. Wide screens crop top and
-   bottom; phones crop the sides.
-   ═══════════════════════════════════════════════════════ */
-.band{
-  position:relative;width:100%;
-  aspect-ratio:2/1;max-height:46rem;
-  overflow:hidden;margin-block:clamp(1rem,4vh,3rem);background:var(--paper);
+/* ── Story ── */
+.story{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media(min-width:54rem){.story{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
+.story figure{margin:0}
+.story img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 40%}
+.story figcaption{margin-top:.9rem;color:var(--soft);font-style:italic;font-size:.92rem}
+.story h2{margin-bottom:1.8rem}
+@media(min-width:54rem){
+  .story.flip{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+  .story.flip figure{order:2}
 }
-.band-photo{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 30%;
-}
-.band::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    linear-gradient(to bottom, var(--paper) 0%, transparent 14%),
-    linear-gradient(to top,    var(--paper) 0%, transparent 16%);
-}
-@media(max-width:44rem){
-  .band{aspect-ratio:1/1;max-height:none}
-  .band-photo{object-position:46% 45%}
-}
+.story .lede{font-size:1.15em}
 
-/* ══ THE DAY ═════════════════════════════════════════════ */
-.day{list-style:none;margin:2.75rem 0 0;padding:0;max-width:47rem}
+/* ── The day ── */
+.day{list-style:none;margin:0 auto;padding:0;max-width:44rem}
 .day li{
-  display:grid;grid-template-columns:1.6rem 5.6rem 1fr;gap:clamp(.85rem,3vw,1.6rem);
-  align-items:baseline;padding:1.2rem 0;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:7rem 1fr;gap:1.5rem;
+  padding:1.6rem 0;border-top:1px solid var(--rule);
 }
 .day li:last-child{border-bottom:1px solid var(--rule)}
-.day svg{width:1.6rem;height:1.6rem;align-self:center;overflow:visible;flex:none}
-.at{
-  font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--ink-soft);
-  font-variant-numeric:tabular-nums;white-space:nowrap;
-}
-.what{font-family:var(--display);font-size:1.42rem;line-height:1.16}
-.what small{
-  display:block;font-family:var(--body);font-size:.87rem;color:var(--ink-soft);
-  margin-top:.35rem;line-height:1.55;
-}
-@media(max-width:34rem){
-  .day li{grid-template-columns:1.3rem 1fr;row-gap:.35rem}
-  .day li .at{grid-column:2}
-  .day li .what{grid-column:2}
-  .day svg{width:1.3rem;height:1.3rem;grid-row:1/3}
-}
+.day .at{color:var(--soft);font-variant-numeric:lining-nums tabular-nums;padding-top:.35rem;white-space:nowrap}
+.day h3{font-size:1.75rem;margin-bottom:.3rem}
+.day p{margin:0;color:var(--soft)}
+@media(max-width:34rem){.day li{grid-template-columns:1fr;gap:.35rem}.day .at{padding:0}}
 
-/* ══ CARDS — each one a different colour, like the glasses ══ */
-.cards{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:2.75rem}
-@media(min-width:44rem){.cards{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:66rem){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{
-  padding:1.7rem 1.5rem 1.6rem;background:var(--paper-warm);
-  border-radius:2px;border-top:3px solid var(--c);position:relative;
-}
-.card .tag{
-  font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--c);display:block;margin-bottom:.75rem;filter:brightness(.78);
-}
-.card h3{font-size:1.28rem;margin-bottom:.55rem}
-.card p{font-size:.91rem;color:var(--ink-soft);margin:0}
+/* ── Travel ── */
+.info{display:grid;gap:0 clamp(2rem,6vw,5rem);grid-template-columns:1fr;max-width:58rem;margin:0 auto}
+@media(min-width:46rem){.info{grid-template-columns:1fr 1fr}}
+.info > div{padding:1.8rem 0 1.4rem;border-top:1px solid var(--rule)}
+.info .caps{display:block;color:var(--soft);margin-bottom:.6rem}
+.info h3{font-size:1.65rem;margin-bottom:.6rem}
+.info p{margin:0;color:var(--soft)}
 
-/* ══ FAQ ═════════════════════════════════════════════════ */
-.faq{max-width:45rem;margin-top:2.75rem;border-top:1px solid var(--rule)}
+/* ── FAQ ── */
+.faq{max-width:44rem;margin:0 auto;border-top:1px solid var(--rule)}
 .faq details{border-bottom:1px solid var(--rule)}
 .faq summary{
-  cursor:pointer;list-style:none;padding:1.25rem 2.6rem 1.25rem 0;position:relative;
-  font-family:var(--display);font-size:1.26rem;line-height:1.28;
+  cursor:pointer;list-style:none;padding:1.4rem 2.5rem 1.4rem 0;position:relative;
+  font-family:var(--display);font-size:1.5rem;line-height:1.25;
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
-  content:"";position:absolute;right:.5rem;top:50%;width:.7rem;height:.7rem;
-  border-right:1.5px solid var(--ink-soft);border-bottom:1.5px solid var(--ink-soft);
-  transform:translateY(-70%) rotate(45deg);transition:transform .25s ease;
+  content:"+";position:absolute;right:.2rem;top:50%;transform:translateY(-50%);
+  font-family:var(--display);font-weight:300;font-size:1.8rem;color:var(--soft);
 }
-.faq details[open] summary::after{transform:translateY(-20%) rotate(-135deg)}
-.faq details p{padding:0 0 1.35rem;margin:0;color:var(--ink-soft);font-size:.94rem}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 0 1.5rem;color:var(--soft)}
 
-/* ══ RSVP — candlelit, the one inverted room ═════════════ */
-.rsvp{background:var(--fig-deep);color:#F3E9EC;overflow:hidden}
-.rsvp{--ink:#F3E9EC;--ink-soft:rgba(243,233,236,.66);--rule:rgba(243,233,236,.2)}
-.rsvp h2{color:#F3E9EC}
-.rsvp .label{color:rgba(243,233,236,.66)}
-.rsvp .script{color:var(--orchid)}
-.shell{
-  max-width:40rem;margin-top:2.6rem;border:1px solid var(--rule);border-radius:3px;
-  background:rgba(255,255,255,.045);padding:clamp(1.5rem,4vw,2.6rem);position:relative;z-index:2;
-}
-.progress{display:flex;gap:.4rem;margin-bottom:1.9rem}
-.progress i{height:2px;flex:1;background:var(--rule);border-radius:2px;transition:background .3s}
-.progress i.done{background:var(--marigold)}
+/* ── RSVP: back to black ── */
+.rsvp{background:var(--black);color:var(--white);--soft:rgba(255,255,255,.62);--rule:rgba(255,255,255,.22)}
+.shell{max-width:34rem;margin:0 auto}
 .step{display:none}
-.step.live{display:block;animation:rise .45s cubic-bezier(.2,.7,.3,1)}
-@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.step.live{display:block;animation:fade .5s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.step.live{animation:none}}
-.step h3{font-size:1.55rem;margin-bottom:.5rem;color:#F3E9EC}
-.step > p{font-size:.92rem;color:var(--ink-soft);margin:0 0 1.5rem}
+.step h3{font-size:2rem;text-align:center;margin-bottom:.5rem}
+.step > p{text-align:center;color:var(--soft);margin:0 auto 2.4rem}
 
-label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.17em;
-  text-transform:uppercase;color:var(--ink-soft);margin-bottom:.5rem}
+label{display:block;font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:.4rem}
 input[type=text],input[type=email],textarea{
-  width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);
-  background:rgba(255,255,255,.07);border:1px solid var(--rule);border-radius:2px;
-  padding:.8rem .9rem;transition:border-color .2s,background .2s;
+  width:100%;font-family:var(--text);font-size:1.1rem;color:var(--white);
+  background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;
+  padding:.55rem 0;transition:border-color .2s;
 }
-input::placeholder,textarea::placeholder{color:var(--ink-soft);opacity:.55}
-input:focus,textarea:focus{outline:none;border-color:var(--marigold);background:rgba(255,255,255,.11)}
-textarea{resize:vertical;min-height:5.5rem}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.3)}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--white)}
+textarea{resize:vertical;min-height:4.5rem}
 .code-input{
-  font-family:var(--display);font-size:1.9rem;letter-spacing:.22em;
-  text-align:center;text-transform:uppercase;padding:.85rem .5rem;
+  font-family:var(--display);font-size:2.4rem;font-weight:300;letter-spacing:.3em;
+  text-align:center;text-transform:uppercase;padding:.4rem 0 .6rem;
 }
-.code-input::placeholder{letter-spacing:.22em;font-size:1.6rem;opacity:.35}
-.field{margin-bottom:1.25rem}
+.code-input::placeholder{letter-spacing:.3em}
+.field{margin-bottom:1.8rem}
 
 .btn{
-  font-family:var(--body);font-size:.7rem;font-weight:600;letter-spacing:.17em;
-  text-transform:uppercase;padding:.88rem 1.6rem;border-radius:100px;cursor:pointer;
-  border:1px solid var(--marigold);background:var(--marigold);color:#3A2A0C;
-  transition:opacity .2s,transform .1s;
+  font-family:var(--text);font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  padding:1rem 2rem;border:1px solid var(--white);border-radius:0;cursor:pointer;
+  background:var(--white);color:var(--black);transition:background .2s,color .2s;
 }
-.btn:hover{opacity:.88}
-.btn:active{transform:translateY(1px)}
-.btn[disabled]{opacity:.45;cursor:not-allowed}
-.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
-.row{display:flex;gap:.7rem;align-items:center;margin-top:1.6rem;flex-wrap:wrap}
+.btn:hover{background:transparent;color:var(--white)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--white);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--white)}
+.row{display:flex;gap:.8rem;justify-content:center;margin-top:2.2rem;flex-wrap:wrap}
 
-.guest{border:1px solid var(--rule);border-radius:2px;padding:1.15rem 1.2rem;margin-bottom:.9rem}
-.guest-name{font-family:var(--display);font-size:1.26rem;margin-bottom:.85rem;color:#F3E9EC}
-.choice{display:flex;gap:.45rem;flex-wrap:wrap}
+.guest{padding:1.6rem 0;border-top:1px solid var(--rule)}
+.guest:last-child{border-bottom:1px solid var(--rule)}
+.guest-name{font-family:var(--display);font-size:1.6rem;margin-bottom:1rem}
+.choice{display:flex;gap:.5rem;flex-wrap:wrap}
 .choice input{position:absolute;opacity:0;width:0;height:0}
 .choice label{
-  margin:0;cursor:pointer;padding:.55rem 1.05rem;border:1px solid var(--rule);
-  border-radius:100px;font-size:.66rem;color:var(--ink-soft);transition:all .18s;
+  margin:0;cursor:pointer;padding:.65rem 1.1rem;border:1px solid var(--rule);
+  color:var(--soft);transition:all .18s;
 }
-.choice input:checked + label{background:var(--k,var(--marigold));color:#2A1218;border-color:var(--k,var(--marigold))}
-.choice input:focus-visible + label{outline:2px solid var(--marigold);outline-offset:3px}
-.sub{margin-top:1rem;display:none}
+.choice label:hover{border-color:var(--white);color:var(--white)}
+.choice input:checked + label{background:var(--white);color:var(--black);border-color:var(--white)}
+.choice input:focus-visible + label{outline:1px solid var(--white);outline-offset:3px}
+.sub{display:none;margin-top:1.4rem}
 .sub.show{display:block}
-.note{font-size:.76rem;color:var(--ink-soft);margin-top:1.1rem;line-height:1.6}
-.err{color:#F0A48C;font-size:.85rem;margin-top:.85rem;min-height:1.2em}
-.done-mark{font-family:var(--display);font-size:clamp(2.2rem,6.5vw,3.3rem);line-height:1.06;margin-bottom:.7rem;color:#F3E9EC}
+.sub .field:last-child{margin-bottom:0}
+.party-name{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.4rem);text-align:center;margin:0 auto 1.8rem;max-width:none}
+.choice.big label{flex:1 1 10rem;text-align:center;padding:.95rem 1rem}
+.sub-label{display:block;font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin:0 0 .5rem}
+.guest.missing .guest-name::after{content:" — please answer";font-family:var(--text);font-size:.9rem;font-style:italic;color:var(--soft)}
+.extras{margin:0 0 .5rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.extras summary{cursor:pointer;list-style:none;padding:1.1rem 0;display:flex;justify-content:space-between;gap:1rem;
+  font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+.extras summary::-webkit-details-marker{display:none}
+.extras summary::after{content:"+";font-size:1.1rem;line-height:1}
+.extras[open] summary::after{content:"\2212"}
+.extras[open]{padding-bottom:.4rem}
+.linkish{background:none;border:0;padding:0;cursor:pointer;font:inherit;font-size:.95rem;color:var(--soft);text-decoration:underline;text-underline-offset:.2em}
+.linkish:hover{color:var(--white)}
+.switch{text-align:center;margin:1.6rem auto 0}
+.note{text-align:center;font-size:.92rem;color:var(--soft);margin:3rem auto 0}
+.err{text-align:center;color:var(--white);font-style:italic;margin-top:1rem;min-height:1.4em}
+.done-mark{font-family:var(--display);font-weight:300;font-size:clamp(2.8rem,8vw,4rem);text-align:center;margin-bottom:.6rem}
+#done-body{text-align:center;margin-inline:auto}
 
-footer{padding:3rem 0 4rem;text-align:center;color:var(--ink-soft)}
-footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+footer{background:var(--black);color:rgba(255,255,255,.55);text-align:center;padding:0 var(--gut) 4rem}
+footer img{width:4.5rem;margin:0 auto 1.6rem;opacity:.9}
+footer p{max-width:none;margin:0}
+</style><style id="ed-theme" data-json="{&quot;vars&quot;:{&quot;--step&quot;:&quot;15mm&quot;}}">:root{--step:15mm}
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs><g id="band"><g class="stem" style="--d:0.42s"><path d="M-10.0,140 Q-6.1,99.5 1.1,66.3" class="stalk" fill="none"/><path d="M-10.0,102.6 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M-10.0,107.7 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="3.4" cy="66.3" r="2.0" class="matcha" opacity=".78"/><circle cx="2.2" cy="68.3" r="2.0" class="matcha" opacity=".78"/><circle cx="-0.0" cy="68.3" r="2.0" class="matcha" opacity=".78"/><circle cx="-1.2" cy="66.3" r="2.0" class="matcha" opacity=".78"/><circle cx="-0.0" cy="64.3" r="2.0" class="matcha" opacity=".78"/><circle cx="2.2" cy="64.3" r="2.0" class="matcha" opacity=".78"/><circle cx="1.1039934121803352" cy="66.32228438977064" r="2.2" class="matcha"/></g><g class="stem" style="--d:0.07s"><path d="M42.6,140 Q40.6,107.2 36.8,80.3" class="stalk" fill="none"/><path d="M42.6,124.3 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="39.8" cy="80.3" r="2.6" class="fig" opacity=".78"/><circle cx="38.3" cy="82.9" r="2.6" class="fig" opacity=".78"/><circle cx="35.3" cy="82.9" r="2.6" class="fig" opacity=".78"/><circle cx="33.9" cy="80.3" r="2.6" class="fig" opacity=".78"/><circle cx="35.3" cy="77.7" r="2.6" class="fig" opacity=".78"/><circle cx="38.3" cy="77.7" r="2.6" class="fig" opacity=".78"/><circle cx="36.82649796654128" cy="80.31947666998639" r="2.8" class="fig"/></g><g class="stem" style="--d:0.41s"><path d="M55.4,140 Q49.8,81.7 39.4,34.0" class="stalk" fill="none"/><path d="M55.4,109.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="41.9" cy="34.0" r="2.2" class="fig" opacity=".78"/><circle cx="40.7" cy="36.1" r="2.2" class="fig" opacity=".78"/><circle cx="38.2" cy="36.1" r="2.2" class="fig" opacity=".78"/><circle cx="37.0" cy="34.0" r="2.2" class="fig" opacity=".78"/><circle cx="38.2" cy="31.9" r="2.2" class="fig" opacity=".78"/><circle cx="40.7" cy="31.9" r="2.2" class="fig" opacity=".78"/><circle cx="39.44082982769585" cy="34.011455886161144" r="2.4" class="fig"/></g><g class="stem" style="--d:0.25s"><path d="M88.6,140 Q90.9,86.9 95.0,43.5" class="stalk" fill="none"/><path d="M88.6,106.3 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M88.6,109.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="95.00557024052154" cy="43.47018918944495" r="2.3" class="sky"/><ellipse cx="99.9" cy="43.5" rx="2.7" ry="1.6" transform="rotate(0 99.9 43.5)" class="sky" opacity=".85"/><ellipse cx="98.5" cy="46.9" rx="2.7" ry="1.6" transform="rotate(45 98.5 46.9)" class="sky" opacity=".85"/><ellipse cx="95.0" cy="48.4" rx="2.7" ry="1.6" transform="rotate(90 95.0 48.4)" class="sky" opacity=".85"/><ellipse cx="91.5" cy="46.9" rx="2.7" ry="1.6" transform="rotate(135 91.5 46.9)" class="sky" opacity=".85"/><ellipse cx="90.1" cy="43.5" rx="2.7" ry="1.6" transform="rotate(180 90.1 43.5)" class="sky" opacity=".85"/><ellipse cx="91.5" cy="40.0" rx="2.7" ry="1.6" transform="rotate(225 91.5 40.0)" class="sky" opacity=".85"/><ellipse cx="95.0" cy="38.6" rx="2.7" ry="1.6" transform="rotate(270 95.0 38.6)" class="sky" opacity=".85"/><ellipse cx="98.5" cy="40.0" rx="2.7" ry="1.6" transform="rotate(315 98.5 40.0)" class="sky" opacity=".85"/></g><g class="stem" style="--d:0.43s"><path d="M132.5,140 Q132.4,77.1 132.1,25.6" class="stalk" fill="none"/><path d="M132.5,103.9 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M132.5,102.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="132.12982309795902" cy="25.574499092641318" rx="1.9" ry="3.2" class="marigold" opacity=".85"/></g><g class="stem" style="--d:0.47s"><path d="M160.5,140 Q162.8,89.7 167.3,48.6" class="stalk" fill="none"/><path d="M160.5,85.7 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M160.5,86.9 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="167.25418928526582" cy="48.6279062038911" rx="2.4" ry="4.0" class="cobalt" opacity=".85"/></g><g class="stem" style="--d:0.08s"><path d="M190.7,140 Q186.9,68.7 180.0,10.4" class="stalk" fill="none"/><path d="M190.7,64.5 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="182.5" cy="10.4" r="2.2" class="orchid" opacity=".78"/><circle cx="181.2" cy="12.6" r="2.2" class="orchid" opacity=".78"/><circle cx="178.7" cy="12.6" r="2.2" class="orchid" opacity=".78"/><circle cx="177.4" cy="10.4" r="2.2" class="orchid" opacity=".78"/><circle cx="178.7" cy="8.1" r="2.2" class="orchid" opacity=".78"/><circle cx="181.2" cy="8.1" r="2.2" class="orchid" opacity=".78"/><circle cx="179.96461420116697" cy="10.363260833642215" r="2.5" class="orchid"/></g><g class="stem" style="--d:0.04s"><path d="M229.5,140 Q231.9,104.6 236.5,75.7" class="stalk" fill="none"/><path d="M229.5,103.0 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="238.7" cy="75.7" r="1.9" class="sky" opacity=".78"/><circle cx="237.6" cy="77.6" r="1.9" class="sky" opacity=".78"/><circle cx="235.4" cy="77.6" r="1.9" class="sky" opacity=".78"/><circle cx="234.3" cy="75.7" r="1.9" class="sky" opacity=".78"/><circle cx="235.4" cy="73.8" r="1.9" class="sky" opacity=".78"/><circle cx="237.6" cy="73.8" r="1.9" class="sky" opacity=".78"/><circle cx="236.48526501649047" cy="75.68816535824429" r="2.1" class="sky"/></g><g class="stem" style="--d:0.32s"><path d="M250.2,140 Q254.1,86.9 261.3,43.4" class="stalk" fill="none"/><path d="M250.2,86.9 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M258.8,43.376508517676484 Q261.3,48.4 263.7,43.376508517676484 Q261.3,41.1 258.8,43.376508517676484 Z" class="sky" opacity=".9"/></g><g class="stem" style="--d:0.05s"><path d="M283.0,140 Q287.4,67.9 295.4,9.0" class="stalk" fill="none"/><path d="M283.0,86.8 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M292.6,8.979141216878219 Q295.4,14.7 298.2,8.979141216878219 Q295.4,6.4 292.6,8.979141216878219 Z" class="orchid" opacity=".9"/></g><g class="stem" style="--d:0.07s"><path d="M306.6,140 Q310.7,104.1 318.4,74.7" class="stalk" fill="none"/><path d="M306.6,112.6 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="318.41606323486843" cy="74.71773953951832" r="1.8" class="mint"/><ellipse cx="322.3" cy="74.7" rx="2.2" ry="1.3" transform="rotate(0 322.3 74.7)" class="mint" opacity=".85"/><ellipse cx="321.2" cy="77.5" rx="2.2" ry="1.3" transform="rotate(45 321.2 77.5)" class="mint" opacity=".85"/><ellipse cx="318.4" cy="78.6" rx="2.2" ry="1.3" transform="rotate(90 318.4 78.6)" class="mint" opacity=".85"/><ellipse cx="315.7" cy="77.5" rx="2.2" ry="1.3" transform="rotate(135 315.7 77.5)" class="mint" opacity=".85"/><ellipse cx="314.5" cy="74.7" rx="2.2" ry="1.3" transform="rotate(180 314.5 74.7)" class="mint" opacity=".85"/><ellipse cx="315.7" cy="72.0" rx="2.2" ry="1.3" transform="rotate(225 315.7 72.0)" class="mint" opacity=".85"/><ellipse cx="318.4" cy="70.8" rx="2.2" ry="1.3" transform="rotate(270 318.4 70.8)" class="mint" opacity=".85"/><ellipse cx="321.2" cy="72.0" rx="2.2" ry="1.3" transform="rotate(315 321.2 72.0)" class="mint" opacity=".85"/></g><g class="stem" style="--d:0.25s"><path d="M351.7,140 Q350.0,87.1 346.8,43.8" class="stalk" fill="none"/><path d="M351.7,111.3 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M351.7,83.5 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="346.82056016825925" cy="43.83063200560845" rx="2.4" ry="4.0" class="marigold" opacity=".85"/></g><g class="stem" style="--d:0.22s"><path d="M386.0,140 Q384.5,107.4 381.8,80.8" class="stalk" fill="none"/><path d="M386.0,110.1 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M386.0,111.2 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M379.6,80.76475192956656 Q381.8,85.4 384.0,80.76475192956656 Q381.8,78.7 379.6,80.76475192956656 Z" class="sky" opacity=".9"/></g><g class="stem" style="--d:0.01s"><path d="M404.8,140 Q406.9,105.9 410.7,77.9" class="stalk" fill="none"/><path d="M404.8,118.3 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="414.1" cy="77.9" r="3.0" class="sky" opacity=".78"/><circle cx="412.4" cy="80.9" r="3.0" class="sky" opacity=".78"/><circle cx="408.9" cy="80.9" r="3.0" class="sky" opacity=".78"/><circle cx="407.2" cy="77.9" r="3.0" class="sky" opacity=".78"/><circle cx="408.9" cy="74.9" r="3.0" class="sky" opacity=".78"/><circle cx="412.4" cy="74.9" r="3.0" class="sky" opacity=".78"/><circle cx="410.65013862251914" cy="77.92848890746279" r="3.3" class="sky"/></g><g class="stem" style="--d:0.24s"><path d="M439.6,140 Q440.9,86.5 443.1,42.7" class="stalk" fill="none"/><path d="M439.6,108.9 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="443.1358394616955" cy="42.66811605434428" r="2.4" class="fig"/><ellipse cx="448.2" cy="42.7" rx="2.8" ry="1.6" transform="rotate(0 448.2 42.7)" class="fig" opacity=".85"/><ellipse cx="446.7" cy="46.3" rx="2.8" ry="1.6" transform="rotate(45 446.7 46.3)" class="fig" opacity=".85"/><ellipse cx="443.1" cy="47.7" rx="2.8" ry="1.6" transform="rotate(90 443.1 47.7)" class="fig" opacity=".85"/><ellipse cx="439.5" cy="46.3" rx="2.8" ry="1.6" transform="rotate(135 439.5 46.3)" class="fig" opacity=".85"/><ellipse cx="438.1" cy="42.7" rx="2.8" ry="1.6" transform="rotate(180 438.1 42.7)" class="fig" opacity=".85"/><ellipse cx="439.5" cy="39.1" rx="2.8" ry="1.6" transform="rotate(225 439.5 39.1)" class="fig" opacity=".85"/><ellipse cx="443.1" cy="37.6" rx="2.8" ry="1.6" transform="rotate(270 443.1 37.6)" class="fig" opacity=".85"/><ellipse cx="446.7" cy="39.1" rx="2.8" ry="1.6" transform="rotate(315 446.7 39.1)" class="fig" opacity=".85"/></g><g class="stem" style="--d:0.25s"><path d="M466.9,140 Q471.5,72.6 480.0,17.4" class="stalk" fill="none"/><path d="M466.9,90.9 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="482.4" cy="17.4" r="2.1" class="fig" opacity=".78"/><circle cx="481.2" cy="19.5" r="2.1" class="fig" opacity=".78"/><circle cx="478.8" cy="19.5" r="2.1" class="fig" opacity=".78"/><circle cx="477.6" cy="17.4" r="2.1" class="fig" opacity=".78"/><circle cx="478.8" cy="15.3" r="2.1" class="fig" opacity=".78"/><circle cx="481.2" cy="15.3" r="2.1" class="fig" opacity=".78"/><circle cx="480.0134214818143" cy="17.421911798857195" r="2.3" class="fig"/></g><g class="stem" style="--d:0.05s"><path d="M511.5,140 Q514.4,86.5 519.9,42.7" class="stalk" fill="none"/><path d="M511.5,102.8 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M511.5,87.4 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="519.8809075985425" cy="42.74721474605734" rx="1.9" ry="3.3" class="orchid" opacity=".85"/></g><g class="stem" style="--d:0.02s"><path d="M529.9,140 Q531.8,95.9 535.2,59.7" class="stalk" fill="none"/><path d="M529.9,94.2 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M529.9,116.6 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="533.8" cy="59.7" rx="2.3" ry="1.3" class="sky" opacity=".8"/><ellipse cx="536.6" cy="62.5" rx="2.1" ry="1.3" class="sky" opacity=".8"/><ellipse cx="533.8" cy="65.3" rx="1.9" ry="1.3" class="sky" opacity=".8"/><ellipse cx="536.6" cy="68.0" rx="1.6" ry="1.3" class="sky" opacity=".8"/><ellipse cx="533.8" cy="70.8" rx="1.4" ry="1.3" class="sky" opacity=".8"/><ellipse cx="536.6" cy="73.5" rx="1.2" ry="1.3" class="sky" opacity=".8"/><ellipse cx="533.8" cy="76.3" rx="0.9" ry="1.3" class="sky" opacity=".8"/></g><g class="stem" style="--d:0.10s"><path d="M559.0,140 Q560.8,105.2 564.2,76.7" class="stalk" fill="none"/><path d="M559.0,105.6 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="562.2" cy="76.7" rx="3.2" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="566.2" cy="80.6" rx="2.9" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="562.2" cy="84.4" rx="2.6" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="566.2" cy="88.2" rx="2.2" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="562.2" cy="92.0" rx="1.9" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="566.2" cy="95.9" rx="1.6" ry="1.9" class="cobalt" opacity=".8"/><ellipse cx="562.2" cy="99.7" rx="1.3" ry="1.9" class="cobalt" opacity=".8"/></g><g class="stem" style="--d:0.12s"><path d="M593.8,140 Q599.1,92.5 608.8,53.6" class="stalk" fill="none"/><path d="M593.8,115.0 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M593.8,111.9 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="608.8" cy="50.7" rx="2.7" ry="2.0" transform="rotate(0 608.8 50.7)" class="orchid" opacity=".88"/><ellipse cx="611.5" cy="52.7" rx="2.7" ry="2.0" transform="rotate(72 611.5 52.7)" class="orchid" opacity=".88"/><ellipse cx="610.4" cy="55.9" rx="2.7" ry="2.0" transform="rotate(144 610.4 55.9)" class="orchid" opacity=".88"/><ellipse cx="607.1" cy="55.9" rx="2.7" ry="2.0" transform="rotate(216 607.1 55.9)" class="orchid" opacity=".88"/><ellipse cx="606.0" cy="52.7" rx="2.7" ry="2.0" transform="rotate(288 606.0 52.7)" class="orchid" opacity=".88"/><circle cx="608.7543818921441" cy="53.56988590200076" r="1.4" class="seed"/></g><g class="stem" style="--d:0.07s"><path d="M621.4,140 Q618.0,102.8 611.8,72.4" class="stalk" fill="none"/><path d="M621.4,111.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="615.1" cy="72.4" r="2.9" class="orchid" opacity=".78"/><circle cx="613.4" cy="75.3" r="2.9" class="orchid" opacity=".78"/><circle cx="610.1" cy="75.3" r="2.9" class="orchid" opacity=".78"/><circle cx="608.5" cy="72.4" r="2.9" class="orchid" opacity=".78"/><circle cx="610.1" cy="69.6" r="2.9" class="orchid" opacity=".78"/><circle cx="613.4" cy="69.6" r="2.9" class="orchid" opacity=".78"/><circle cx="611.7715215391578" cy="72.44585639453568" r="3.2" class="orchid"/></g><g class="stem" style="--d:0.12s"><path d="M671.7,140 Q675.4,109.8 682.1,85.1" class="stalk" fill="none"/><path d="M671.7,114.4 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="682.0912540957687" cy="85.12005766393088" rx="1.6" ry="2.7" class="marigold" opacity=".85"/></g><g class="stem" style="--d:0.27s"><path d="M693.1,140 Q687.6,79.7 677.4,30.4" class="stalk" fill="none"/><path d="M693.1,79.0 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M693.1,87.9 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="677.4" cy="26.4" rx="3.7" ry="2.8" transform="rotate(0 677.4 26.4)" class="mint" opacity=".88"/><ellipse cx="681.2" cy="29.1" rx="3.7" ry="2.8" transform="rotate(72 681.2 29.1)" class="mint" opacity=".88"/><ellipse cx="679.7" cy="33.6" rx="3.7" ry="2.8" transform="rotate(144 679.7 33.6)" class="mint" opacity=".88"/><ellipse cx="675.1" cy="33.6" rx="3.7" ry="2.8" transform="rotate(216 675.1 33.6)" class="mint" opacity=".88"/><ellipse cx="673.6" cy="29.1" rx="3.7" ry="2.8" transform="rotate(288 673.6 29.1)" class="mint" opacity=".88"/><circle cx="677.399400753459" cy="30.373379779388912" r="1.9" class="seed"/></g><g class="stem" style="--d:0.38s"><path d="M720.5,140 Q723.6,93.0 729.4,54.6" class="stalk" fill="none"/><path d="M720.5,100.7 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="729.4" cy="50.5" rx="3.7" ry="2.8" transform="rotate(0 729.4 50.5)" class="mint" opacity=".88"/><ellipse cx="733.2" cy="53.3" rx="3.7" ry="2.8" transform="rotate(72 733.2 53.3)" class="mint" opacity=".88"/><ellipse cx="731.7" cy="57.8" rx="3.7" ry="2.8" transform="rotate(144 731.7 57.8)" class="mint" opacity=".88"/><ellipse cx="727.0" cy="57.8" rx="3.7" ry="2.8" transform="rotate(216 727.0 57.8)" class="mint" opacity=".88"/><ellipse cx="725.5" cy="53.3" rx="3.7" ry="2.8" transform="rotate(288 725.5 53.3)" class="mint" opacity=".88"/><circle cx="729.3631427789738" cy="54.55801304012546" r="1.9" class="seed"/></g><g class="stem" style="--d:0.20s"><path d="M749.0,140 Q746.4,89.8 741.7,48.8" class="stalk" fill="none"/><path d="M749.0,88.8 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="744.5" cy="48.8" r="2.4" class="mint" opacity=".78"/><circle cx="743.1" cy="51.2" r="2.4" class="mint" opacity=".78"/><circle cx="740.3" cy="51.2" r="2.4" class="mint" opacity=".78"/><circle cx="738.9" cy="48.8" r="2.4" class="mint" opacity=".78"/><circle cx="740.3" cy="46.3" r="2.4" class="mint" opacity=".78"/><circle cx="743.1" cy="46.3" r="2.4" class="mint" opacity=".78"/><circle cx="741.6916506606194" cy="48.75150986834339" r="2.7" class="mint"/></g><g class="stem" style="--d:0.52s"><path d="M795.5,140 Q792.4,69.7 786.7,12.2" class="stalk" fill="none"/><path d="M795.5,69.8 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M795.5,74.6 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M783.1,12.174725427638961 Q786.7,19.5 790.2,12.174725427638961 Q786.7,8.9 783.1,12.174725427638961 Z" class="fig" opacity=".9"/></g><g class="stem" style="--d:0.12s"><path d="M826.8,140 Q821.6,79.5 812.0,29.9" class="stalk" fill="none"/><path d="M826.8,91.4 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M826.8,78.4 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="812.0073406154629" cy="29.921234659735973" r="1.5" class="marigold"/><ellipse cx="815.2" cy="29.9" rx="1.8" ry="1.0" transform="rotate(0 815.2 29.9)" class="marigold" opacity=".85"/><ellipse cx="814.2" cy="32.2" rx="1.8" ry="1.0" transform="rotate(45 814.2 32.2)" class="marigold" opacity=".85"/><ellipse cx="812.0" cy="33.1" rx="1.8" ry="1.0" transform="rotate(90 812.0 33.1)" class="marigold" opacity=".85"/><ellipse cx="809.8" cy="32.2" rx="1.8" ry="1.0" transform="rotate(135 809.8 32.2)" class="marigold" opacity=".85"/><ellipse cx="808.9" cy="29.9" rx="1.8" ry="1.0" transform="rotate(180 808.9 29.9)" class="marigold" opacity=".85"/><ellipse cx="809.8" cy="27.7" rx="1.8" ry="1.0" transform="rotate(225 809.8 27.7)" class="marigold" opacity=".85"/><ellipse cx="812.0" cy="26.8" rx="1.8" ry="1.0" transform="rotate(270 812.0 26.8)" class="marigold" opacity=".85"/><ellipse cx="814.2" cy="27.7" rx="1.8" ry="1.0" transform="rotate(315 814.2 27.7)" class="marigold" opacity=".85"/></g><g class="stem" style="--d:0.02s"><path d="M849.7,140 Q851.8,108.1 855.5,82.0" class="stalk" fill="none"/><path d="M849.7,124.9 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="855.5067756106857" cy="82.0168744154373" r="2.4" class="mint"/><ellipse cx="860.5" cy="82.0" rx="2.8" ry="1.6" transform="rotate(0 860.5 82.0)" class="mint" opacity=".85"/><ellipse cx="859.0" cy="85.6" rx="2.8" ry="1.6" transform="rotate(45 859.0 85.6)" class="mint" opacity=".85"/><ellipse cx="855.5" cy="87.0" rx="2.8" ry="1.6" transform="rotate(90 855.5 87.0)" class="mint" opacity=".85"/><ellipse cx="852.0" cy="85.6" rx="2.8" ry="1.6" transform="rotate(135 852.0 85.6)" class="mint" opacity=".85"/><ellipse cx="850.5" cy="82.0" rx="2.8" ry="1.6" transform="rotate(180 850.5 82.0)" class="mint" opacity=".85"/><ellipse cx="852.0" cy="78.5" rx="2.8" ry="1.6" transform="rotate(225 852.0 78.5)" class="mint" opacity=".85"/><ellipse cx="855.5" cy="77.0" rx="2.8" ry="1.6" transform="rotate(270 855.5 77.0)" class="mint" opacity=".85"/><ellipse cx="859.0" cy="78.5" rx="2.8" ry="1.6" transform="rotate(315 859.0 78.5)" class="mint" opacity=".85"/></g><g class="stem" style="--d:0.38s"><path d="M883.7,140 Q888.6,103.6 897.7,73.8" class="stalk" fill="none"/><path d="M883.7,119.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M883.7,118.2 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="897.7" cy="70.0" rx="3.5" ry="2.6" transform="rotate(0 897.7 70.0)" class="matcha" opacity=".88"/><ellipse cx="901.2" cy="72.6" rx="3.5" ry="2.6" transform="rotate(72 901.2 72.6)" class="matcha" opacity=".88"/><ellipse cx="899.9" cy="76.8" rx="3.5" ry="2.6" transform="rotate(144 899.9 76.8)" class="matcha" opacity=".88"/><ellipse cx="895.5" cy="76.8" rx="3.5" ry="2.6" transform="rotate(216 895.5 76.8)" class="matcha" opacity=".88"/><ellipse cx="894.2" cy="72.6" rx="3.5" ry="2.6" transform="rotate(288 894.2 72.6)" class="matcha" opacity=".88"/><circle cx="897.7047992130767" cy="73.75166949131427" r="1.8" class="seed"/></g><g class="stem" style="--d:0.21s"><path d="M913.6,140 Q908.4,77.1 898.7,25.6" class="stalk" fill="none"/><path d="M913.6,98.2 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M913.6,77.4 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M895.9,25.62062442114005 Q898.7,31.3 901.4,25.62062442114005 Q898.7,23.1 895.9,25.62062442114005 Z" class="sky" opacity=".9"/></g><g class="stem" style="--d:0.49s"><path d="M953.4,140 Q953.7,72.2 954.4,16.7" class="stalk" fill="none"/><path d="M953.4,88.2 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="957.4" cy="16.7" r="2.6" class="mint" opacity=".78"/><circle cx="955.9" cy="19.3" r="2.6" class="mint" opacity=".78"/><circle cx="952.9" cy="19.3" r="2.6" class="mint" opacity=".78"/><circle cx="951.5" cy="16.7" r="2.6" class="mint" opacity=".78"/><circle cx="952.9" cy="14.2" r="2.6" class="mint" opacity=".78"/><circle cx="955.9" cy="14.2" r="2.6" class="mint" opacity=".78"/><circle cx="954.4250430822628" cy="16.71951313411313" r="2.8" class="mint"/></g><g class="stem" style="--d:0.31s"><path d="M973.1,140 Q969.5,78.2 962.8,27.7" class="stalk" fill="none"/><path d="M973.1,88.5 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M973.1,80.9 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="962.803387877684" cy="27.69538428448608" rx="1.9" ry="3.2" class="cobalt" opacity=".85"/></g><g class="stem" style="--d:0.51s"><path d="M1010.1,140 Q1014.1,106.2 1021.5,78.5" class="stalk" fill="none"/><path d="M1010.1,115.7 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="1021.4583888312237" cy="78.4988221470548" rx="2.0" ry="3.4" class="fig" opacity=".85"/></g><g class="stem" style="--d:0.12s"><path d="M1043.8,140 Q1040.8,67.9 1035.1,9.0" class="stalk" fill="none"/><path d="M1043.8,89.1 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M1043.8,93.4 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="1035.1" cy="5.6" rx="3.1" ry="2.4" transform="rotate(0 1035.1 5.6)" class="orchid" opacity=".88"/><ellipse cx="1038.3" cy="7.9" rx="3.1" ry="2.4" transform="rotate(72 1038.3 7.9)" class="orchid" opacity=".88"/><ellipse cx="1037.0" cy="11.7" rx="3.1" ry="2.4" transform="rotate(144 1037.0 11.7)" class="orchid" opacity=".88"/><ellipse cx="1033.1" cy="11.7" rx="3.1" ry="2.4" transform="rotate(216 1033.1 11.7)" class="orchid" opacity=".88"/><ellipse cx="1031.9" cy="7.9" rx="3.1" ry="2.4" transform="rotate(288 1031.9 7.9)" class="orchid" opacity=".88"/><circle cx="1035.0711876860073" cy="8.970794551336638" r="1.6" class="seed"/></g><g class="stem" style="--d:0.47s"><path d="M1071.4,140 Q1066.7,94.4 1057.8,57.1" class="stalk" fill="none"/><path d="M1071.4,95.8 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M1071.4,92.2 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><circle cx="1061.0" cy="57.1" r="2.8" class="sky" opacity=".78"/><circle cx="1059.4" cy="59.9" r="2.8" class="sky" opacity=".78"/><circle cx="1056.2" cy="59.9" r="2.8" class="sky" opacity=".78"/><circle cx="1054.6" cy="57.1" r="2.8" class="sky" opacity=".78"/><circle cx="1056.2" cy="54.3" r="2.8" class="sky" opacity=".78"/><circle cx="1059.4" cy="54.3" r="2.8" class="sky" opacity=".78"/><circle cx="1057.797248500228" cy="57.12919165138118" r="3.1" class="sky"/></g><g class="stem" style="--d:0.53s"><path d="M1116.1,140 Q1121.3,77.9 1131.0,27.2" class="stalk" fill="none"/><path d="M1116.1,75.2 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><ellipse cx="1130.9618661937125" cy="27.154291955644084" rx="2.4" ry="4.0" class="cobalt" opacity=".85"/></g><g class="stem" style="--d:0.41s"><path d="M1132.2,140 Q1126.9,68.0 1117.0,9.1" class="stalk" fill="none"/><path d="M1132.2,106.3 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><path d="M1132.2,76.1 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><ellipse cx="1116.9909764546335" cy="9.053621197578707" rx="2.2" ry="3.8" class="orchid" opacity=".85"/></g><g class="stem" style="--d:0.30s"><path d="M1167.0,140 Q1168.7,68.6 1171.7,10.2" class="stalk" fill="none"/><path d="M1167.0,99.1 q-9,-5 -13,2 q7,5 13,-2 Z" class="leaf"/><path d="M1167.0,107.0 q9,-5 13,2 q-7,5 -13,-2 Z" class="leaf"/><circle cx="1171.6984082902668" cy="10.1531650492104" r="1.6" class="orchid"/><ellipse cx="1175.1" cy="10.2" rx="1.9" ry="1.1" transform="rotate(0 1175.1 10.2)" class="orchid" opacity=".85"/><ellipse cx="1174.1" cy="12.5" rx="1.9" ry="1.1" transform="rotate(45 1174.1 12.5)" class="orchid" opacity=".85"/><ellipse cx="1171.7" cy="13.5" rx="1.9" ry="1.1" transform="rotate(90 1171.7 13.5)" class="orchid" opacity=".85"/><ellipse cx="1169.3" cy="12.5" rx="1.9" ry="1.1" transform="rotate(135 1169.3 12.5)" class="orchid" opacity=".85"/><ellipse cx="1168.3" cy="10.2" rx="1.9" ry="1.1" transform="rotate(180 1168.3 10.2)" class="orchid" opacity=".85"/><ellipse cx="1169.3" cy="7.8" rx="1.9" ry="1.1" transform="rotate(225 1169.3 7.8)" class="orchid" opacity=".85"/><ellipse cx="1171.7" cy="6.8" rx="1.9" ry="1.1" transform="rotate(270 1171.7 6.8)" class="orchid" opacity=".85"/><ellipse cx="1174.1" cy="7.8" rx="1.9" ry="1.1" transform="rotate(315 1174.1 7.8)" class="orchid" opacity=".85"/></g></g></defs>
-</svg>
-
-<nav class="nav" id="nav" data-open="false">
-  <button class="nav-btn" id="navBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-panel" id="navPanel">
-    <a href="#story"  style="--c:var(--orchid)">Our story</a>
-    <a href="#day"    style="--c:var(--marigold)">The day</a>
-    <a href="#travel" style="--c:var(--cobalt)">Travel &amp; stay</a>
-    <a href="#faq"    style="--c:var(--mint)">Questions</a>
-    <a href="#rsvp"   style="--c:var(--fig)">RSVP</a>
-  </div>
+<button class="menu-btn caps" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="menu" id="menu" aria-label="Sections">
+  <ul>
+    <li><a href="#story">Our story</a></li>
+    <li><a href="#day">The day</a></li>
+    <li><a href="#travel">Travel &amp; stay</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
 </nav>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <header class="hero">
-  <img class="hero-photo" src="meadow.jpg" alt="Sarah and Syl walking into a meadow at sunset" fetchpriority="high">
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="hero-eyebrow">We're getting married</p>
-    <h1 class="names">Sarah<span class="amp">and</span>Syl</h1>
-    <div class="hero-meta">
-      <span style="--c:var(--poppy)">Saturday 28 August 2027</span>
-      <span style="--c:var(--cobalt)">Stonewall Estate</span>
-      <span style="--c:var(--marigold)">Delancey, New York</span>
-    </div>
-    <a class="hero-cta" href="#rsvp">RSVP</a>
-    <p class="countdown" id="countdown" aria-live="polite"></p>
+  <img class="mono" src="logo.png" alt="Sarah and Syl monogram" width="1080" height="1080">
+  <h1>Sarah <em>&amp;</em> Syl</h1>
+  <p class="when caps">
+    <span>August 28th, 2027</span><span class="sep">·</span><span>Stonewall Estate</span><span class="sep">·</span><span>Delancey, New York</span>
+  </p>
+  <div class="hero-links">
+    <a class="caps" href="#rsvp">RSVP here</a>
+    <p class="countdown caps" id="countdown" aria-live="polite"></p>
   </div>
-  <svg class="meadow meadow-hero" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <use href="#band"/>
-  </svg>
 </header>
 
-<!-- ══ STORY ══ -->
+<figure class="plate">
+  <img class="bw" src="meadow-crop-3.jpg" alt="Sarah and Syl walking into a meadow at sunset" style="aspect-ratio: 5588 / 2555; object-position: 50% 50%;">
+</figure>
+
+<!-- STORY -->
 <section id="story" class="wrap">
-  <p class="label">How we got here</p>
   <div class="story">
-    <figure class="story-figure">
-      <img class="story-photo" src="forest_front.jpg" alt="Sarah and Syl walking hand in hand across a footbridge in the woods" loading="lazy">
-      <figcaption>[Where this was taken], [month year]</figcaption>
+    <figure>
+      
+      <img class="bw" src="forest_front.jpg" alt="Sarah and Syl walking hand in hand across a footbridge in the woods" loading="lazy"><figcaption>Photo from our engagement, the weekend of August 10th, 2025.</figcaption>
     </figure>
     <div>
-      <h2 style="margin-bottom:1.5rem">It started with <span class="script">a forecast</span> that got it completely wrong.</h2>
-      <p class="lede">[Two or three sentences. Where you met, what the weather was doing, the detail only the two of you would think to mention.]</p>
-      <p>[A second paragraph if you want it — the proposal, the move, the dog. Keep it shorter than feels right. People are here for the address and the start time, and they'll like you more for getting to the point.]</p>
-      <p>[Close with the invitation itself.]</p>
+      
+      <h2>We are getting married!!!</h2>
+      <p class="lede">We're are so excited to invite you to celebrate with us in the beautiful Catskill Mountains in Upstate New York, on August 28th, 2027!</p>
+      
+      
     </div>
   </div>
 </section>
 
-<!-- ══ THE DAY ══ -->
+<!-- THE DAY -->
 <section id="day" class="wrap">
-  <p class="label">The day itself</p>
-  <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);max-width:16ch">From first light to <span class="script">last dance.</span></h2>
-
-  <ul class="day">
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--marigold)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--marigold)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--marigold)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--marigold)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--marigold)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">6:21 am</span>
-      <span class="what">Sunrise<small>Not an event. Just so you know what you're missing.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="0" cy="0" r="2" fill="var(--sky)"/><ellipse cx="4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(0 4.4 0.0)" fill="var(--sky)" opacity=".8"/><ellipse cx="3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(45 3.1 3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="0.0" cy="4.4" rx="2.5" ry="1.5" transform="rotate(90 0.0 4.4)" fill="var(--sky)" opacity=".8"/><ellipse cx="-3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(135 -3.1 3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="-4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(180 -4.4 0.0)" fill="var(--sky)" opacity=".8"/><ellipse cx="-3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(225 -3.1 -3.1)" fill="var(--sky)" opacity=".8"/><ellipse cx="-0.0" cy="-4.4" rx="2.5" ry="1.5" transform="rotate(270 -0.0 -4.4)" fill="var(--sky)" opacity=".8"/><ellipse cx="3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(315 3.1 -3.1)" fill="var(--sky)" opacity=".8"/></svg>
-      <span class="at">[2:30 pm]</span>
-      <span class="what">Doors open<small>1595 Holmes Hollow Road. Follow the signs up the hill.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--orchid)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--orchid)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--orchid)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--orchid)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--orchid)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">[3:00 pm]</span>
-      <span class="what">Ceremony<small>On the hilltop, looking out at the Catskills. In the barn if the weather says otherwise.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="3.0" cy="0.0" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="1.5" cy="2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-1.5" cy="2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-3.0" cy="0.0" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="-1.5" cy="-2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="1.5" cy="-2.6" r="2.7" fill="var(--mint)" opacity=".75"/><circle cx="0" cy="0" r="2.9" fill="var(--mint)"/></svg>
-      <span class="at">[4:00 pm]</span>
-      <span class="what">Cocktails &amp; photographs<small>On the bluestone patio. Please be in some of them.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="0" cy="0" r="2" fill="var(--cobalt)"/><ellipse cx="4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(0 4.4 0.0)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(45 3.1 3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="0.0" cy="4.4" rx="2.5" ry="1.5" transform="rotate(90 0.0 4.4)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-3.1" cy="3.1" rx="2.5" ry="1.5" transform="rotate(135 -3.1 3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-4.4" cy="0.0" rx="2.5" ry="1.5" transform="rotate(180 -4.4 0.0)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(225 -3.1 -3.1)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="-0.0" cy="-4.4" rx="2.5" ry="1.5" transform="rotate(270 -0.0 -4.4)" fill="var(--cobalt)" opacity=".8"/><ellipse cx="3.1" cy="-3.1" rx="2.5" ry="1.5" transform="rotate(315 3.1 -3.1)" fill="var(--cobalt)" opacity=".8"/></svg>
-      <span class="at">[6:00 pm]</span>
-      <span class="what">Dinner<small>In the barn. Long tables, mismatched everything. You'll pick a main when you RSVP.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><ellipse cx="0.0" cy="-3.4" rx="3.2" ry="2.4" transform="rotate(0 0.0 -3.4)" fill="var(--poppy)" opacity=".85"/><ellipse cx="3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(72 3.2 -1.1)" fill="var(--poppy)" opacity=".85"/><ellipse cx="2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(144 2.0 2.8)" fill="var(--poppy)" opacity=".85"/><ellipse cx="-2.0" cy="2.8" rx="3.2" ry="2.4" transform="rotate(216 -2.0 2.8)" fill="var(--poppy)" opacity=".85"/><ellipse cx="-3.2" cy="-1.1" rx="3.2" ry="2.4" transform="rotate(288 -3.2 -1.1)" fill="var(--poppy)" opacity=".85"/><circle cx="0" cy="0" r="1.7" fill="#4A3B22"/></svg>
-      <span class="at">7:41 pm</span>
-      <span class="what">Sunset<small>About forty minutes of gold over the mountains. We'll be outside for all of it.</small></span>
-    </li>
-    <li>
-      <svg viewBox="-9 -9 18 18" aria-hidden="true"><circle cx="3.0" cy="0.0" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="1.5" cy="2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-1.5" cy="2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-3.0" cy="0.0" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="-1.5" cy="-2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="1.5" cy="-2.6" r="2.7" fill="var(--fig)" opacity=".75"/><circle cx="0" cy="0" r="2.9" fill="var(--fig)"/></svg>
-      <span class="at">[9:00 pm]</span>
-      <span class="what">Dancing<small>No curfew up here. Request something on the RSVP form.</small></span>
-    </li>
-  </ul>
+  <div class="head">
+    
+    <h2>Schedule</h2>
+  </div>
+  <ol class="day">
+    
+    <li><span class="at">2:30 pm</span><div><h3>Doors open</h3><p>1595 Holmes Hollow Rd, Delancey, NY 13752</p></div></li>
+    <li><span class="at">3:00 pm</span><div><h3>Ceremony</h3><p>TBD</p></div></li>
+    <li><span class="at">4:00 pm</span><div><h3>Cocktail Hour</h3><p>TBD</p></div></li>
+    <li><span class="at">6:00 pm</span><div><h3>Dinner</h3><p>TBD</p></div></li>
+    
+    <li><span class="at">9:00 pm</span><div><h3>Dance</h3><p>TBD</p></div></li>
+  </ol>
 </section>
 
-<!-- ══ PHOTO BAND ══ -->
-<div class="band">
-  <img class="band-photo" src="grass.png" alt="Sarah and Syl sitting together in a wildflower meadow at dusk" loading="lazy">
-</div>
+<figure class="plate lower">
+  
+</figure>
 
-<!-- ══ TRAVEL ══ -->
+<!-- VENUE -->
 <section id="travel" class="wrap">
-  <p class="label">Getting there &amp; staying</p>
-  <h2 style="font-size:clamp(2.1rem,5vw,3.4rem);max-width:15ch">It's a drive. <span class="script">Make a weekend of it.</span></h2>
-
-  <div class="cards">
-    <div class="card" style="--c:var(--cobalt)">
-      <span class="tag">By air</span>
-      <h3>Nearest airports</h3>
-      <p>Binghamton (BGM) about 1h15 · Albany (ALB) about 1h45 · Newburgh (SWF) about 1h45. The New York City airports are roughly three hours. Rent a car either way — there's no other way in.</p>
-    </div>
-    <div class="card" style="--c:var(--orchid)">
-      <span class="tag">Beds</span>
-      <h3>[Hotel name]</h3>
-      <p>[Address in Delhi or Margaretville]. Block held under "[block name]" until [date], at [rate] a night.</p>
-    </div>
-    <div class="card" style="--c:var(--mint)">
-      <span class="tag">Beds</span>
-      <h3>Rent a house</h3>
-      <p>Delhi, Andes, Bovina and Margaretville are all within half an hour and full of places to rent. Worth splitting one with people you like — there's not much hotel stock up here, and it goes early.</p>
-    </div>
-    <div class="card" style="--c:var(--sky)">
-      <span class="tag">The drive</span>
-      <h3>Getting up the hill</h3>
-      <p>About three hours from New York City, two from Albany. The last stretch is winding country road with patchy phone signal — download the directions before you leave the highway.</p>
-    </div>
-    <div class="card" style="--c:var(--matcha)">
-      <span class="tag">Wear</span>
-      <h3>Dress</h3>
-      <p>[Garden formal]. The ceremony is on a grass hilltop, so heels will sink. Late-August evenings in the Catskills drop into the fifties once the sun goes — bring a layer you don't mind being photographed in.</p>
-    </div>
-    <div class="card" style="--c:var(--marigold)">
-      <span class="tag">Gifts</span>
-      <h3>Registry</h3>
-      <p>You being there is the thing. If you insist: <a href="[registry-url]">[registry name]</a>.</p>
+  <div class="story flip">
+    <figure>
+      <img class="bw" src="stonewall-2.jpg" alt="Stonewall Estate in Delancey, New York" loading="lazy">
+      <figcaption>Photo of Stonewall Estate</figcaption>
+    </figure>
+    <div>
+      <h2>Venue</h2>
+      <p class="lede">We're thrilled to be to hosting at the beautiful Stonewall Estate, on a hilltop in the western Catskills. The last few miles are up a dirt road, with patchy cell service, so we recommend downloading the route directions beforehand.</p>
+      <p>1595 Holmes Hollow Rd, Delancey, NY 13752</p>
+      
+      <p><a class="caps" href="https://www.google.com/maps/search/?api=1&amp;query=1595+Holmes+Hollow+Rd+Delancey+NY+13752">Get directions</a></p>
     </div>
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
-<section id="faq" class="wrap">
-  <p class="label">Questions</p>
-  <h2 style="font-size:clamp(2.1rem,5vw,3.4rem)">Asked and <span class="script">answered.</span></h2>
-
+<!-- FAQ -->
+<section id="faq" class="wrap" style="padding-top:0">
+  <div class="head">
+    
+    <h2>FAQs</h2>
+  </div>
   <div class="faq">
-    <details>
-      <summary>Can I bring someone?</summary>
-      <p>Your invitation code brings up everyone we've saved a seat for — you'll see the names when you enter it. If we've got it wrong, tell us and we'll fix it.</p>
-    </details>
-    <details>
-      <summary>Are kids invited?</summary>
-      <p>[Yes, absolutely / We're keeping it adults-only, with an exception for the ones in the wedding party.] [If yes: there's a sitter from 8pm in the [room].]</p>
-    </details>
-    <details>
-      <summary>What if it rains?</summary>
-      <p>Then it rains. Everything moves into the barn and the day runs exactly on schedule. Don't check the forecast on our behalf — one of us already is, hourly.</p>
-    </details>
-    <details>
-      <summary>Where do I park?</summary>
-      <p>There's parking on the property. You can leave a car overnight and collect it the next morning — please do, if there's any doubt.</p>
-    </details>
-    <details>
-      <summary>I've lost my invitation code.</summary>
-      <p>Email us at <a href="mailto:[you@example.com]">[you@example.com]</a> and we'll send it back to you. It's six characters, printed under your name on the invitation.</p>
-    </details>
-    <details>
-      <summary>I have a dietary restriction.</summary>
-      <p>There's a box for it on the RSVP form, and the kitchen reads every one. Be as specific as you like.</p>
-    </details>
-    <details>
-      <summary>When do I need to RSVP by?</summary>
-      <p><strong>Saturday 24 July 2027.</strong> After that the caterer's count is locked and we genuinely can't add anyone.</p>
-    </details>
-  </div>
+    
+    
+    
+    <details><summary>Where should I stay?</summary>
+      <p>We have blocked rooms at ___. We also recommend AirBNB __ and ___.</p></details>
+    <details><summary>I've lost my invitation code.</summary>
+      <p>Email and we'll send it back to you. It's six characters, printed under your name on the invitation.</p></details>
+    
+    <details><summary>When do I need to RSVP by?</summary>
+      <p><strong>Please aim to do so before Saturday 24 July 2027</strong></p></details>
+  <details><summary>Where do I park?</summary><p>There is parking on the property.</p></details><details><summary>Where are nearby airports?</summary><p>Albany airport is __ hr away; Binhamton airport is ___ hr away; NYC airport is ___ hr away. We recommend renting a car</p></details><details><summary>How to get to venue?</summary><p>We suggest by rental car. We will have a shuttle service to our block hotel, however, so people can enjoy alcohol without having to drive home!</p></details></div>
 </section>
 
-<!-- ══ RSVP ══ -->
+<!-- RSVP -->
 <section id="rsvp" class="rsvp">
   <div class="wrap">
-    <p class="label">Répondez s'il vous plaît</p>
-    <h2 style="font-size:clamp(2.1rem,5vw,3.4rem)">Let us <span class="script">know.</span></h2>
-    <p class="lede" style="margin-top:1rem">By 24 July 2027. Enter the code from your invitation and it'll bring up everyone we've saved a seat for.</p>
+    <div class="head">
+      
+      <h2>We can't wait to celebrate with you!</h2>
+      
+    </div>
 
-    <div class="shell">
-      <div class="progress" aria-hidden="true"><i class="done"></i><i></i><i></i></div>
+    <div class="shell" id="rsvp-app">
 
-      <div class="step live" data-step="1">
-        <h3>Find your invitation</h3>
-        <p>Your code is printed on the invitation, just under your name.</p>
+      <form class="step live" data-step="code" id="rsvp-find" novalidate="">
         <div class="field">
-          <label for="lookup">Invitation code</label>
-          <input type="text" id="lookup" class="code-input" placeholder="XXX-XXX"
-                 maxlength="7" autocomplete="off" autocapitalize="characters"
-                 spellcheck="false" inputmode="text">
+          <label for="lookup" style="text-align:center">Invitation code</label>
+          <input type="text" id="lookup" class="code-input" placeholder="XXX-XXX" maxlength="7" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text">
         </div>
         <div class="err" id="err1" role="status"></div>
-        <div class="row"><button class="btn" id="find">Find invitation</button></div>
-      </div>
+        <div class="row"><button class="btn" type="submit" id="find">RSVP</button></div>
+      </form>
 
-      <div class="step" data-step="2">
-        <h3 id="party-hi">Your party</h3>
-        <p>Tell us who's coming. You can answer for everyone here.</p>
+      <form class="step" data-step="reply" id="rsvp-form" novalidate="">
+        <p class="party-name" id="party-hi"></p>
         <div id="guests"></div>
-        <div class="err" id="err2" role="status"></div>
-        <div class="row">
-          <button class="btn ghost" data-back="1">Back</button>
-          <button class="btn" id="to3">Continue</button>
-        </div>
-      </div>
-
-      <div class="step" data-step="3">
-        <h3>Almost done</h3>
-        <p>Three optional things, then you're free.</p>
-        <div class="field">
-          <label for="song">A song that will get you dancing</label>
-          <input type="text" id="song" placeholder="Artist — title">
-        </div>
-        <div class="field">
-          <label for="msg">Anything you'd like to tell us</label>
-          <textarea id="msg" placeholder="Travel plans, a warning, a blessing"></textarea>
-        </div>
-        <div class="field">
-          <label for="email">Email, so we can send the details</label>
+        <div class="field" style="margin-top:2.2rem">
+          <label for="email">Email, so we can send you updates</label>
           <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
         </div>
-        <div class="err" id="err3" role="status"></div>
-        <div class="row">
-          <button class="btn ghost" data-back="2">Back</button>
-          <button class="btn" id="send">Send RSVP</button>
-        </div>
-      </div>
+        <details class="extras">
+          <summary>Add a song request or a note</summary>
+          <div class="field">
+            <label for="song">A song that will get you dancing</label>
+            <input type="text" id="song" placeholder="Artist — title">
+          </div>
+          <div class="field">
+            <label for="msg">Anything you'd like to tell us</label>
+            <textarea id="msg" placeholder="Travel plans, a warning, a blessing"></textarea>
+          </div>
+        </details>
+        <div class="err" id="err2" role="status"></div>
+        <div class="row"><button class="btn" type="submit" id="send">Send RSVP</button></div>
+        <p class="switch"><button type="button" class="linkish" id="restart">Not you? Use a different code</button></p>
+      </form>
 
-      <div class="step" data-step="4">
-        <div class="done-mark" id="done-head">Thank you.</div>
-        <p id="done-body">We've got it. 28 August 2027 — we'll see you there.</p>
-        <div class="row"><button class="btn ghost" id="again">Change your answer</button></div>
+      <div class="step" data-step="done">
+        <div class="done-mark" id="done-head">Thank you!</div>
+        <p id="done-body">We've got it. We'll see you on 28 August 2027.</p>
+        <div class="row"><button class="btn ghost" type="button" id="again">Change your answer</button></div>
       </div>
 
       <p class="note">Something not working? Write to <a href="mailto:[you@example.com]">[you@example.com]</a> and we'll put you down by hand.</p>
@@ -612,12 +392,9 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
   </div>
 </section>
 
-<svg class="meadow meadow-flip" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-  <use href="#band"/>
-</svg>
-
-<footer class="wrap">
-  <p>Sarah &amp; Syl &middot; 28 August 2027 &middot; Delancey, New York</p>
+<footer>
+  
+  <p class="caps">Sarah &amp; Syl · 28 August 2027 · Delancey, New York</p>
 </footer>
 
 <script>
@@ -625,7 +402,23 @@ footer p{max-width:none;font-size:.72rem;font-weight:500;letter-spacing:.18em;te
 const RSVP_API  = "https://wedding-rsvp.sylfoisy.workers.dev";
 const DEMO_MODE = false;  // live — guest list comes from the D1 database
 const MEALS     = ["Beef", "Fish", "Vegetarian"];
-const MEAL_COLOR = ["var(--fig)", "var(--sky)", "var(--matcha)"];
+
+/* Wording inside the RSVP form, so it can be changed in one place. */
+const TEXT = {
+  yes:      "Joyfully accepts",
+  no:       "Regretfully declines",
+  meal:     "Dinner",
+  diet:     "Allergies or dietary needs",
+  plusOne:  "Their name",
+  badCode:  "That code didn't match anything. Check for a mistyped letter, or email us.",
+  shortCode:"Codes are six characters. Check the invitation.",
+  offline:  "Couldn't reach the server. Try again in a moment.",
+  answerFor:"Please answer for",
+  mealFor:  "Please pick a dinner for",
+  sendFail: "That didn't send. Try again, or email us and we'll add you by hand.",
+  coming:   n => `${n === 1 ? "One seat" : n + " seats"} saved. We'll email the details closer to the day.`,
+  notComing:"We're sorry to miss you, but thank you for letting us know."
+};
 
 const DEMO_LIST = [];  // only used when DEMO_MODE is true
 
@@ -633,209 +426,172 @@ const DEMO_LIST = [];  // only used when DEMO_MODE is true
 (function(){
   const DAY_OF = new Date("2027-08-28T15:00:00-04:00");
   const el = document.getElementById("countdown");
-
   function paint(){
-    const now  = new Date();
-    const days = Math.ceil((DAY_OF - now) / 86400000);
-
-    if(days > 1){
-      el.innerHTML = `<span class="cd-num">${days.toLocaleString()}</span>
-                      <span class="cd-label">days to go</span>`;
-    } else if(days === 1){
-      el.innerHTML = `<span class="cd-num">Tomorrow</span>`;
-    } else if(days === 0){
-      el.innerHTML = `<span class="cd-num">Today</span>`;
-    } else {
-      el.innerHTML = `<span class="cd-label">Married since 28 August 2027</span>`;
-    }
+    const days = Math.ceil((DAY_OF - new Date()) / 86400000);
+    el.textContent =
+      days > 1   ? `${days.toLocaleString()} days to go` :
+      days === 1 ? "Tomorrow" :
+      days === 0 ? "Today" :
+                   "Married since 28 August 2027";
   }
   paint();
-  setInterval(paint, 60 * 60 * 1000);   // re-check hourly so it rolls over on its own
+  setInterval(paint, 60 * 60 * 1000);
 })();
 
-/* ═══ NAV ══════════════════════════════════════════════════ */
+/* ═══ MENU ═════════════════════════════════════════════════ */
 (function(){
-  const nav   = document.getElementById("nav");
-  const btn   = document.getElementById("navBtn");
-  const panel = document.getElementById("navPanel");
-
+  const btn  = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
   const set = open => {
-    nav.dataset.open = open;
+    document.body.dataset.menu = open ? "open" : "";
     btn.setAttribute("aria-expanded", open);
-    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    btn.textContent = open ? "Close" : "Menu";
   };
-
-  btn.addEventListener("click", e => {
-    e.stopPropagation();
-    set(nav.dataset.open !== "true");
-  });
-
-  panel.addEventListener("click", e => { if(e.target.tagName === "A") set(false); });
-  document.addEventListener("click", e => { if(!nav.contains(e.target)) set(false); });
+  btn.addEventListener("click", () => set(document.body.dataset.menu !== "open"));
+  menu.addEventListener("click", e => { if(e.target.tagName === "A" || e.target === menu) set(false); });
   document.addEventListener("keydown", e => {
-    if(e.key === "Escape" && nav.dataset.open === "true"){ set(false); btn.focus(); }
+    if(e.key === "Escape" && document.body.dataset.menu === "open"){ set(false); btn.focus(); }
   });
 })();
 
-/* ═══ MEADOW — grow on entry ═══════════════════════════════ */
+/* ═══ RSVP ═════════════════════════════════════════════════
+   Code → everyone's answers on one page → thank you.
+   ═══════════════════════════════════════════════════════════ */
 (function(){
-  const io = new IntersectionObserver((es,o) => {
-    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("grown"); o.unobserve(e.target); } });
-  }, { rootMargin:"0px 0px -12% 0px" });
-  document.querySelectorAll(".meadow").forEach(m => io.observe(m));
-})();
-
-/* ═══ RSVP ═════════════════════════════════════════════════ */
-(function(){
-  const shell = document.querySelector(".shell");
-  const bars  = document.querySelectorAll(".progress i");
-  const steps = document.querySelectorAll(".step");
+  const $ = id => document.getElementById(id);
+  const app = $("rsvp-app"); if(!app) return;
+  const steps  = () => app.querySelectorAll(".step");
+  const lookup = $("lookup"), findForm = $("rsvp-find"), replyForm = $("rsvp-form");
   let party = null;
 
-  const go = n => {
-    steps.forEach(s => s.classList.toggle("live", +s.dataset.step === n));
-    bars.forEach((b,i) => b.classList.toggle("done", i < Math.min(n,3)));
-    shell.scrollIntoView({ behavior:"smooth", block:"nearest" });
+  const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const say = (id, msg) => { const e = $(id); if(e) e.textContent = msg || ""; };
+  const go  = name => {
+    steps().forEach(s => s.classList.toggle("live", s.dataset.step === name));
+    app.scrollIntoView({ behavior:"smooth", block:"start" });
   };
-  const say = (id,msg) => { document.getElementById(id).textContent = msg || ""; };
+  const val = id => ($(id) && $(id).value.trim()) || "";
 
   async function api(path, body){
     if(DEMO_MODE){
-      await new Promise(r => setTimeout(r, 420));
+      await new Promise(r => setTimeout(r, 400));
       if(path === "/lookup"){
-        const q = String(body.code || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
-        const hit = DEMO_LIST.find(h => h.code === q);
+        const hit = DEMO_LIST.find(h => h.code === String(body.code).toUpperCase());
         return hit ? { found:true, party:hit } : { found:false };
       }
-      console.log("RSVP payload →", body);
-      return { ok:true };
+      console.log("RSVP payload →", body); return { ok:true };
     }
-    const r = await fetch(RSVP_API + path, {
-      method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(body)
-    });
+    const r = await fetch(RSVP_API + path, { method:"POST", headers:{ "Content-Type":"application/json" }, body:JSON.stringify(body) });
     if(!r.ok) throw new Error("HTTP " + r.status);
     return r.json();
   }
 
-  const findBtn = document.getElementById("find");
-  const lookup  = document.getElementById("lookup");
+  /* Step 1: the code */
+  const tidy = v => { const raw = String(v).toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0,6); return raw.length > 3 ? raw.slice(0,3) + "-" + raw.slice(3) : raw; };
+  if(lookup) lookup.addEventListener("input", () => { lookup.value = tidy(lookup.value); });
 
-  /* Auto-format as they type: uppercase, dash after three. */
-  lookup.addEventListener("input", () => {
-    const raw = lookup.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0,6);
-    lookup.value = raw.length > 3 ? raw.slice(0,3) + "-" + raw.slice(3) : raw;
-  });
-
-  findBtn.addEventListener("click", async () => {
-    const code = lookup.value.replace(/[^A-Za-z0-9]/g, "");
-    say("err1","");
-    if(code.length !== 6){ say("err1","Codes are six characters — check the invitation."); return; }
-    findBtn.disabled = true; findBtn.textContent = "Looking…";
+  async function find(){
+    const code = (lookup ? lookup.value : "").replace(/[^A-Za-z0-9]/g, "");
+    const btn = $("find"), label = btn ? btn.textContent : "";
+    say("err1");
+    if(code.length !== 6){ say("err1", TEXT.shortCode); return; }
+    if(btn){ btn.disabled = true; btn.textContent = "Looking…"; }
     try{
       const res = await api("/lookup", { code });
-      if(!res.found){
-        say("err1","That code didn't match anything. Check for a mistyped character, or email us and we'll sort it out.");
-      } else {
-        party = res.party;
-        document.getElementById("party-hi").textContent = party.household;
-        renderGuests(party.guests);
-        go(2);
-      }
-    } catch(e){ say("err1","Couldn't reach the server. Try again in a moment."); }
-    finally { findBtn.disabled = false; findBtn.textContent = "Find invitation"; }
-  });
-  lookup.addEventListener("keydown", e => { if(e.key === "Enter") findBtn.click(); });
+      if(!res.found){ say("err1", TEXT.badCode); return; }
+      party = res.party;
+      if($("party-hi")) $("party-hi").textContent = party.household || "";
+      renderGuests(party.guests || []);
+      go("reply");
+    } catch(e){ say("err1", TEXT.offline); }
+    finally { if(btn){ btn.disabled = false; btn.textContent = label; } }
+  }
+  if(findForm) findForm.addEventListener("submit", e => { e.preventDefault(); find(); });
 
+  /* Step 2: everyone's answers */
   function renderGuests(guests){
-    document.getElementById("guests").innerHTML = guests.map(g => `
-      <div class="guest" data-guest="${g.id}">
-        <div class="guest-name">${g.name}</div>
-        <div class="choice">
-          <input type="radio" name="a-${g.id}" id="y-${g.id}" value="yes">
-          <label for="y-${g.id}" style="--k:var(--mint)">Joyfully accepts</label>
-          <input type="radio" name="a-${g.id}" id="n-${g.id}" value="no">
-          <label for="n-${g.id}" style="--k:var(--orchid)">Regretfully declines</label>
+    const box = $("guests"); if(!box) return;
+    box.innerHTML = guests.map(g => {
+      const id = esc(g.id);
+      return `
+      <div class="guest" data-guest="${id}">
+        <div class="guest-name">${esc(g.name)}</div>
+        <div class="choice big">
+          <input type="radio" name="a-${id}" id="y-${id}" value="yes"><label for="y-${id}">${TEXT.yes}</label>
+          <input type="radio" name="a-${id}" id="n-${id}" value="no"><label for="n-${id}">${TEXT.no}</label>
         </div>
-        <div class="sub" data-sub="${g.id}">
-          ${g.plusOne ? `
-          <div class="field" style="margin-top:1.1rem">
-            <label for="pn-${g.id}">Their name</label>
-            <input type="text" id="pn-${g.id}" placeholder="Who are you bringing?">
-          </div>` : ``}
-          <div class="field" style="margin-top:1.1rem;margin-bottom:.9rem">
-            <label>Dinner</label>
-            <div class="choice">
-              ${MEALS.map((m,i) => `
-                <input type="radio" name="m-${g.id}" id="m${i}-${g.id}" value="${m}">
-                <label for="m${i}-${g.id}" style="--k:${MEAL_COLOR[i] || "var(--marigold)"}">${m}</label>`).join("")}
-            </div>
+        <div class="sub" data-sub="${id}">
+          ${g.plusOne ? `<div class="field"><label for="pn-${id}">${TEXT.plusOne}</label><input type="text" id="pn-${id}" placeholder="Who are you bringing?"></div>` : ``}
+          <div class="field">
+            <span class="sub-label">${TEXT.meal}</span>
+            <div class="choice">${MEALS.map((m,i) => `<input type="radio" name="m-${id}" id="m${i}-${id}" value="${esc(m)}"><label for="m${i}-${id}">${esc(m)}</label>`).join("")}</div>
           </div>
-          <div class="field" style="margin-bottom:0">
-            <label for="d-${g.id}">Allergies or dietary needs</label>
-            <input type="text" id="d-${g.id}" placeholder="Optional">
-          </div>
+          <div class="field"><label for="d-${id}">${TEXT.diet}</label><input type="text" id="d-${id}" placeholder="Optional"></div>
         </div>
-      </div>`).join("");
-
-    document.querySelectorAll('#guests input[type=radio][name^="a-"]').forEach(r => {
-      r.addEventListener("change", e => {
-        const id = e.target.name.slice(2);
-        document.querySelector(`[data-sub="${id}"]`).classList.toggle("show", e.target.value === "yes");
-      });
-    });
+      </div>`;
+    }).join("");
+    box.querySelectorAll('input[name^="a-"]').forEach(r => r.addEventListener("change", e => {
+      const card = e.target.closest(".guest");
+      card.classList.remove("missing"); say("err2");
+      card.querySelector(".sub").classList.toggle("show", e.target.value === "yes");
+    }));
+    box.querySelectorAll('input[name^="m-"]').forEach(r => r.addEventListener("change", e => { e.target.closest(".guest").classList.remove("missing"); say("err2"); }));
   }
 
-  document.getElementById("to3").addEventListener("click", () => {
-    say("err2","");
-    const missing = party.guests.filter(g => !document.querySelector(`input[name="a-${g.id}"]:checked`));
-    if(missing.length){ say("err2",`Still need an answer for ${missing.map(m=>m.name.split(" ")[0]).join(", ")}.`); return; }
-    const noMeal = party.guests.filter(g =>
-      document.querySelector(`input[name="a-${g.id}"]:checked`).value === "yes" &&
-      !document.querySelector(`input[name="m-${g.id}"]:checked`));
-    if(noMeal.length){ say("err2",`Pick a dinner for ${noMeal.map(m=>m.name.split(" ")[0]).join(", ")}.`); return; }
-    go(3);
-  });
+  const picked = (name) => { const r = document.querySelector(`input[name="${CSS.escape(name)}"]:checked`); return r ? r.value : null; };
 
-  const sendBtn = document.getElementById("send");
-  sendBtn.addEventListener("click", async () => {
-    say("err3","");
-    sendBtn.disabled = true; sendBtn.textContent = "Sending…";
+  async function send(){
+    say("err2");
+    const guests = party.guests || [];
+    document.querySelectorAll(".guest.missing").forEach(c => c.classList.remove("missing"));
+    const card = g => document.querySelector(`.guest[data-guest="${CSS.escape(String(g.id))}"]`);
+    const first = n => String(n).split(" ")[0];
+
+    const unanswered = guests.filter(g => !picked("a-" + g.id));
+    const noMeal = guests.filter(g => picked("a-" + g.id) === "yes" && !picked("m-" + g.id));
+    const bad = unanswered.length ? unanswered : noMeal;
+    if(bad.length){
+      bad.forEach(g => card(g) && card(g).classList.add("missing"));
+      say("err2", `${unanswered.length ? TEXT.answerFor : TEXT.mealFor} ${bad.map(g => first(g.name)).join(", ")}.`);
+      const c = card(bad[0]); if(c) c.scrollIntoView({ behavior:"smooth", block:"center" });
+      return;
+    }
+
+    const btn = $("send"), label = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
     const payload = {
       partyId: party.id,
-      email:   document.getElementById("email").value.trim(),
-      song:    document.getElementById("song").value.trim(),
-      message: document.getElementById("msg").value.trim(),
-      guests:  party.guests.map(g => {
-        const yes  = document.querySelector(`input[name="a-${g.id}"]:checked`).value === "yes";
-        const meal = document.querySelector(`input[name="m-${g.id}"]:checked`);
-        const pn   = document.getElementById(`pn-${g.id}`);
+      email: val("email"), song: val("song"), message: val("msg"),
+      guests: guests.map(g => {
+        const yes = picked("a-" + g.id) === "yes";
         return {
           id: g.id,
-          name: pn && pn.value.trim() ? pn.value.trim() : g.name,
+          name: val("pn-" + g.id) || g.name,
           attending: yes,
-          meal: yes && meal ? meal.value : null,
-          dietary: yes ? document.getElementById(`d-${g.id}`).value.trim() : ""
+          meal: yes ? picked("m-" + g.id) : null,
+          dietary: yes ? val("d-" + g.id) : ""
         };
       })
     };
     try{
       await api("/rsvp", payload);
       const coming = payload.guests.filter(g => g.attending).length;
-      document.getElementById("done-head").textContent = coming ? "Wonderful." : "Thank you.";
-      document.getElementById("done-body").textContent = coming
-        ? `${coming === 1 ? "One seat" : coming + " seats"} saved. We'll email the details closer to the day.`
-        : "We're sorry to miss you — but thank you for telling us.";
-      go(4);
-    } catch(e){ say("err3","That didn't send. Try again, or email us and we'll add you by hand."); }
-    finally { sendBtn.disabled = false; sendBtn.textContent = "Send RSVP"; }
-  });
+      if($("done-head")) $("done-head").textContent = coming ? "Wonderful." : "Thank you.";
+      if($("done-body")) $("done-body").textContent = coming ? TEXT.coming(coming) : TEXT.notComing;
+      go("done");
+    } catch(e){ say("err2", TEXT.sendFail); }
+    finally { if(btn){ btn.disabled = false; btn.textContent = label; } }
+  }
+  if(replyForm) replyForm.addEventListener("submit", e => { e.preventDefault(); if(party) send(); });
 
-  document.querySelectorAll("[data-back]").forEach(b =>
-    b.addEventListener("click", () => go(+b.dataset.back)));
-  document.getElementById("again").addEventListener("click", () => {
-    lookup.value = ""; party = null; go(1);
-  });
+  /* Moving around */
+  const restart = () => { party = null; if(lookup){ lookup.value = ""; } say("err1"); go("code"); if(lookup) lookup.focus({ preventScroll:true }); };
+  if($("restart")) $("restart").addEventListener("click", restart);
+  if($("again"))   $("again").addEventListener("click", () => go(party ? "reply" : "code"));
+
+  /* A link like yoursite.com/?code=ABC123#rsvp fills the code in for them */
+  const fromLink = new URLSearchParams(location.search).get("code");
+  if(fromLink && lookup){ lookup.value = tidy(fromLink); find(); }
 })();
 </script>
-</body>
-</html>
+</body></html>
